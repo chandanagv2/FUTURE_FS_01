@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandana G V | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #FFFAF0;
+            color: #203A35;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #173F35;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h2 {
+            color: #DCE7D2;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #DCE7D2;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #FFFAF0, #DCE7D2);
+        }
+
+        .hero .tag {
+            color: #326B55;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 65px);
+            color: #173F35;
+            margin: 12px 0;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #326B55;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #173F35;
+        }
+
+        section {
+            padding: 60px 9%;
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #173F35;
+            margin-bottom: 25px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #DCE7D2;
+            box-shadow: 0 5px 15px rgba(23, 63, 53, 0.07);
+        }
+
+        .card h3 {
+            color: #326B55;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .skills span {
+            background: #DCE7D2;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        footer {
+            background: #173F35;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer a {
+            color: #DCE7D2;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Chandana G V</h2>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <p class="tag">WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm Chandana G V</h1>
+        <h3>Information Science Engineering Student</h3>
+        <p>
+            A curious mind, a love for problem-solving, and a passion
+            for learning technology. I am building my skills one idea
+            and one project at a time.
+        </p>
+        <div>
+            <a class="button" href="#projects">Explore My Projects</a>
+            <a class="button" href="#contact">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <p>
+                I am an Information Science Engineering student who enjoys
+                learning programming, exploring new technologies, and
+                solving problems. I am developing my technical knowledge
+                through academic learning, projects, and internship tasks.
+                My goal is to become a skilled professional and contribute
+                to meaningful technology solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>B.E. Information Science and Engineering</h3>
+                <p>Jawaharlal Nehru New College of Engineering</p>
+                <p>Shivamogga, Karnataka</p>
+                <p>Affiliated to VTU, Belagavi</p>
+                <p><strong>Expected Graduation:</strong> 2028</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <span>C Programming</span>
+            <span>Python Basics</span>
+            <span>DBMS Basics</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript Basics</span>
+            <span>Problem Solving</span>
+            <span>Communication</span>
+            <span>Teamwork</span>
+            <span>Time Management</span>
+            <span>Quick Learner</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Biometric Attendance System</h3>
+                <p>
+                    An ideathon project exploring biometric technology
+                    for attendance management.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Laptop Billing System</h3>
+                <p>
+                    A C programming project for generating bills
+                    based on customer selections.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Book Issue and Return System</h3>
+                <p>
+                    A C programming project to organize basic
+                    book issue and return operations.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Reminder App with Rewards</h3>
+                <p>
+                    An app concept that encourages users to complete
+                    reminders through a reward system.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>AI Medical Image Enhancement</h3>
+                <p>
+                    A hackathon project focused on medical image
+                    enhancement and segmentation.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2>Certificates and Achievements</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>AI Fundamentals & Lifelong Professional Skills</h3>
+                <p>Magic Bus India Foundation and IBM SkillsBuild</p>
+                <p>Certificate earned.</p>
+                <p><em>Add your certificate link when available.</em></p>
+            </article>
+
+            <article class="card">
+                <h3>MedhaDrishti-2K26 AI Hackathon</h3>
+                <p>
+                    Participated in a national-level hackathon focused
+                    on AI-based medical image enhancement and segmentation.
+                </p>
+                <p><em>Add your certificate image or link.</em></p>
+            </article>
+
+            <article class="card">
+                <h3>Ideathon Participation</h3>
+                <p>2026</p>
+                <p><em>Add your certificate image or link.</em></p>
+            </article>
+
+            <article class="card">
+                <h3>Math Olympiad Participation</h3>
+                <p>2025</p>
+                <p><em>Add your certificate image or link.</em></p>
+            </article>
+
+            <article class="card">
+                <h3>Full Stack Web Development Internship</h3>
+                <p>Future Interns</p>
+                <p>
+                    Currently undertaking the internship.
+                    Certificate to be added after it is received.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="center">
+            <p>Thank you for visiting my portfolio!</p>
+            <p>
+                Email:
+                <a href="mailto:YOUR_EMAIL@example.com">
+                    Add your email address
+                </a>
+            </p>
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/" target="_blank"
+                   rel="noopener noreferrer">Visit my LinkedIn</a>
+            </p>
+            <p>
+                GitHub:
+                <a href="https://github.com/" target="_blank"
+                   rel="noopener noreferrer">Visit my GitHub</a>
+            </p>
+            <p>
+                Replace the example email and general profile links
+                with your own links before publishing.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Chandana G V | Personal Portfolio</p>
+    <p>Designed with care and a passion for learning.</p>
+</footer>
+
+</body>
+</html>
