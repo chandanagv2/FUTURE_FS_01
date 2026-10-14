@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Chandana G V | Portfolio</title>
+    <title>Chandana G V | Personal Portfolio</title>
 
     <meta name="description"
-          content="Personal portfolio of Chandana G V, Information Science and Engineering student.">
+          content="Explore the portfolio of Chandana G V, an Information Science and Engineering student.">
 
     <style>
         :root {
-            --green: #526b59;
-            --dark-green: #354b3b;
-            --light-green: #e6ede4;
+            --forest: #294b38;
+            --green: #58765f;
+            --sage: #dce7d9;
             --cream: #faf8f1;
             --white: #ffffff;
-            --text: #303830;
-            --muted: #6d756d;
-            --border: #dce3d9;
+            --text: #303831;
+            --muted: #697269;
+            --border: #e0e5dc;
         }
 
         * {
@@ -29,7 +29,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
+            scroll-padding-top: 85px;
         }
 
         body {
@@ -45,216 +45,303 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: min(1080px, 90%);
             margin: auto;
         }
 
         /* Navigation */
 
         header {
-            background: rgba(250, 248, 241, 0.97);
-            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
         }
 
         nav {
-            min-height: 72px;
+            min-height: 74px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 20px;
         }
 
         .logo {
-            font-size: 23px;
-            font-weight: bold;
-            color: var(--dark-green);
+            color: var(--forest);
+            font-size: 21px;
+            font-weight: 800;
+            white-space: nowrap;
         }
 
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 22px;
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
+            color: var(--text);
         }
 
         .nav-links a:hover {
             color: var(--green);
         }
 
-        /* Hero */
+        /* Hero section */
 
         .hero {
-            padding: 100px 0;
-            background: var(--light-green);
+            padding: 110px 0 100px;
+            background: var(--cream);
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.75fr;
+            align-items: center;
+            gap: 65px;
         }
 
         .eyebrow {
             color: var(--green);
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(38px, 6vw, 64px);
-            line-height: 1.15;
-            color: var(--dark-green);
+            color: var(--forest);
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.08;
+            letter-spacing: -2px;
             margin-bottom: 20px;
         }
 
         .hero h2 {
-            font-size: clamp(20px, 3vw, 27px);
+            font-size: 21px;
             font-weight: 500;
             margin-bottom: 18px;
         }
 
-        .hero p {
-            max-width: 650px;
-            color: #596459;
-            margin-bottom: 28px;
+        .hero-description {
+            max-width: 560px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .button {
             display: inline-block;
-            background: var(--green);
+            padding: 12px 22px;
+            border: 1px solid var(--forest);
+            border-radius: 4px;
+            background: var(--forest);
             color: var(--white);
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.2s;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s ease;
         }
 
         .button:hover {
-            background: var(--dark-green);
+            background: var(--green);
+            border-color: var(--green);
             transform: translateY(-2px);
         }
 
         .button-outline {
             background: transparent;
-            color: var(--dark-green);
-            border: 1px solid var(--green);
-            margin-left: 10px;
+            color: var(--forest);
         }
 
         .button-outline:hover {
             color: var(--white);
         }
 
-        /* General sections */
+        .hero-note {
+            background: var(--sage);
+            padding: 38px 30px;
+            border-left: 5px solid var(--green);
+        }
+
+        .hero-note .note-label {
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .hero-note h3 {
+            color: var(--forest);
+            font-size: 27px;
+            line-height: 1.3;
+            margin: 15px 0;
+        }
+
+        .hero-note p {
+            color: #536253;
+            font-size: 14px;
+        }
+
+        /* Common sections */
 
         section {
-            padding: 75px 0;
+            padding: 82px 0;
+        }
+
+        .section-kicker {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
         .section-title {
-            color: var(--dark-green);
-            font-size: 32px;
-            margin-bottom: 10px;
+            color: var(--forest);
+            font-size: clamp(29px, 4vw, 39px);
+            line-height: 1.25;
+            margin-bottom: 15px;
         }
 
-        .section-subtitle {
+        .section-description {
             color: var(--muted);
+            max-width: 680px;
             margin-bottom: 35px;
         }
 
         .section-line {
-            width: 55px;
-            height: 4px;
+            width: 48px;
+            height: 3px;
             background: var(--green);
-            margin: 15px 0 25px;
+            margin: 20px 0 26px;
         }
 
         /* About */
 
+        .about {
+            background: var(--white);
+        }
+
         .about-text {
             max-width: 850px;
-            font-size: 17px;
+            font-size: 16px;
+            color: #505a50;
+        }
+
+        .about-highlight {
+            color: var(--forest);
+            font-weight: 700;
         }
 
         /* Education */
 
         .education {
-            background: var(--white);
+            background: var(--cream);
         }
 
-        .education-heading {
-            font-size: 21px;
-            color: var(--dark-green);
+        .degree-title {
+            color: var(--forest);
+            font-size: 23px;
             margin-bottom: 5px;
         }
 
-        .college-name {
+        .degree-details {
             color: var(--muted);
-            margin-bottom: 8px;
         }
 
         .graduation {
-            font-weight: 600;
+            margin-top: 8px;
             margin-bottom: 35px;
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        .results-heading {
-            font-size: 20px;
-            margin-bottom: 20px;
+        .subheading {
+            color: var(--forest);
+            font-size: 18px;
+            margin-bottom: 18px;
         }
 
         .result-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 15px;
             margin-bottom: 35px;
         }
 
-        .result-box {
-            background: var(--cream);
+        .result-card {
+            background: var(--white);
             border: 1px solid var(--border);
-            border-left: 4px solid var(--green);
-            border-radius: 5px;
-            padding: 22px;
+            border-top: 3px solid var(--green);
+            padding: 23px 16px;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .result-box h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
+        .result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(41, 75, 56, 0.08);
         }
 
-        .result-box p {
+        .result-label {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 13px;
+            margin-bottom: 10px;
         }
 
         .result-value {
-            color: var(--dark-green);
-            font-size: 27px;
-            font-weight: bold;
+            color: var(--forest);
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1.3;
         }
 
-        .school-results {
+        .school-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
+            gap: 15px;
+        }
+
+        .school-card {
+            background: var(--sage);
+            padding: 22px;
+            border-radius: 4px;
+        }
+
+        .school-card h4 {
+            color: var(--forest);
+            margin-bottom: 8px;
+        }
+
+        .school-card p {
+            color: #536253;
+            font-size: 14px;
+        }
+
+        .school-score {
+            display: block;
+            color: var(--forest);
+            font-size: 27px;
+            font-weight: 800;
+            margin-top: 8px;
         }
 
         /* Skills */
 
         .skills {
-            background: var(--cream);
+            background: var(--white);
         }
 
         .skill-group {
@@ -262,43 +349,43 @@
         }
 
         .skill-group h3 {
-            color: var(--dark-green);
-            font-size: 19px;
+            color: var(--forest);
+            font-size: 18px;
             margin-bottom: 14px;
         }
 
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .skill {
-            background: var(--white);
+        .skill-item {
+            background: var(--cream);
             border: 1px solid var(--border);
-            padding: 9px 17px;
-            border-radius: 4px;
+            padding: 9px 15px;
+            border-radius: 3px;
             font-size: 14px;
         }
 
         /* Projects */
 
         .projects {
-            background: var(--white);
+            background: var(--cream);
         }
 
         .project-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
+            gap: 22px;
         }
 
         .project-card {
+            background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 26px;
-            background: var(--cream);
-            transition: 0.2s;
+            padding: 29px;
+            border-radius: 4px;
+            transition: 0.2s ease;
         }
 
         .project-card:hover {
@@ -308,38 +395,43 @@
 
         .project-number {
             color: var(--green);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
         .project-card h3 {
-            color: var(--dark-green);
+            color: var(--forest);
             font-size: 21px;
-            margin: 12px 0;
+            line-height: 1.4;
+            margin: 14px 0;
         }
 
         .project-card p {
             color: var(--muted);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 20px;
         }
 
         .project-tags span {
-            background: var(--light-green);
-            color: var(--dark-green);
-            padding: 5px 10px;
+            color: var(--forest);
+            background: var(--sage);
+            padding: 5px 9px;
             font-size: 12px;
             border-radius: 3px;
         }
 
         /* Certificates */
+
+        .certificates {
+            background: var(--white);
+        }
 
         .certificate-list {
             list-style: none;
@@ -347,77 +439,119 @@
         }
 
         .certificate-list li {
-            padding: 20px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 21px 5px;
             border-bottom: 1px solid var(--border);
         }
 
-        .certificate-list strong {
-            color: var(--dark-green);
-            display: block;
-            font-size: 17px;
+        .certificate-name {
+            color: var(--forest);
+            font-weight: 700;
         }
 
-        .certificate-list span {
+        .certificate-description {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .certificate-year {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            white-space: nowrap;
         }
 
         /* Contact */
 
         .contact {
-            background: var(--light-green);
+            background: var(--sage);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
         }
 
         .contact-intro {
-            max-width: 650px;
-            margin-bottom: 30px;
+            color: #536253;
+            max-width: 400px;
         }
 
-        .contact-list {
+        .contact-details {
             list-style: none;
-            max-width: 750px;
         }
 
-        .contact-list li {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 17px 0;
-            border-bottom: 1px solid #cdd9cc;
+        .contact-details li {
+            padding: 18px 0;
+            border-bottom: 1px solid #c6d4c4;
         }
 
         .contact-label {
-            min-width: 100px;
-            font-weight: bold;
-            color: var(--dark-green);
-        }
-
-        .contact-list a {
-            overflow-wrap: anywhere;
+            display: block;
             color: var(--green);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            margin-bottom: 5px;
         }
 
-        .contact-list a:hover {
+        .contact-details a {
+            color: var(--forest);
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-details a:hover {
             text-decoration: underline;
         }
 
         .contact-button {
-            margin-top: 28px;
+            margin-top: 25px;
         }
 
         /* Footer */
 
         footer {
-            background: var(--dark-green);
+            background: var(--forest);
             color: var(--white);
             text-align: center;
-            padding: 25px 15px;
-            font-size: 14px;
+            padding: 24px 15px;
+            font-size: 13px;
         }
 
-        /* Responsive design */
+        footer p {
+            opacity: 0.9;
+        }
 
-        @media (max-width: 700px) {
+        /* Mobile layout */
+
+        @media (max-width: 850px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .hero-note {
+                max-width: 600px;
+            }
+
+            .result-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
             nav {
                 padding: 15px 0;
                 align-items: flex-start;
@@ -425,7 +559,7 @@
             }
 
             .nav-links {
-                gap: 12px 16px;
+                gap: 10px 15px;
             }
 
             .hero {
@@ -433,21 +567,30 @@
             }
 
             section {
-                padding: 55px 0;
+                padding: 60px 0;
             }
 
-            .result-grid,
-            .school-results,
-            .project-grid {
+            .project-grid,
+            .school-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 28px;
+            .result-card {
+                padding: 19px 12px;
             }
 
-            .button-outline {
-                margin: 12px 0 0;
+            .result-value {
+                font-size: 23px;
+            }
+
+            .certificate-list li {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
             }
         }
     </style>
@@ -458,7 +601,7 @@
     <!-- Navigation -->
     <header>
         <nav class="container">
-            <a href="#home" class="logo">Chandana G V.</a>
+            <a class="logo" href="#home">Chandana G V.</a>
 
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -475,116 +618,141 @@
 
         <!-- Home -->
         <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="eyebrow">Personal Portfolio</p>
+            <div class="container hero-layout">
 
-                    <h1>Hi, I'm Chandana G V.</h1>
+                <div>
+                    <p class="eyebrow">Welcome to my portfolio</p>
 
-                    <h2>Information Science and Engineering Student</h2>
+                    <h1>Chandana<br>G V.</h1>
 
-                    <p>
-                        I am an engineering student interested in programming,
-                        web development, and technology. I enjoy learning new
-                        skills, solving problems, and exploring ideas through
-                        projects.
+                    <h2>Information Science & Engineering Student</h2>
+
+                    <p class="hero-description">
+                        A motivated engineering student with an interest
+                        in programming, web development, and technology.
+                        I enjoy learning new skills, exploring ideas,
+                        and building my technical knowledge through
+                        practical projects.
                     </p>
 
-                    <a href="#projects" class="button">Explore My Projects</a>
+                    <div class="buttons">
+                        <a href="#projects" class="button">
+                            Explore Projects
+                        </a>
 
-                    <a href="#contact" class="button button-outline">
-                        Contact Me
-                    </a>
+                        <a href="#contact" class="button button-outline">
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
+
+                <aside class="hero-note">
+                    <p class="note-label">A little about me</p>
+
+                    <h3>Learning today.<br>Building for tomorrow.</h3>
+
+                    <p>
+                        I believe in continuous learning, clear
+                        communication, teamwork, and improving one
+                        skill at a time.
+                    </p>
+                </aside>
+
             </div>
         </section>
 
         <!-- About -->
-        <section id="about">
+        <section class="about" id="about">
             <div class="container">
+
+                <p class="section-kicker">Get to know me</p>
+
                 <h2 class="section-title">About Me</h2>
+
                 <div class="section-line"></div>
 
                 <p class="about-text">
-                    I am Chandana G V, a Bachelor of Engineering student
-                    specializing in Information Science and Engineering at
-                    Jawaharlal Nehru New College of Engineering, Shivamogga.
-                    I am building my technical knowledge in programming,
-                    databases, and web development. I am a quick learner
-                    who values teamwork, communication, and continuous
-                    improvement. My goal is to strengthen my technical
-                    skills and gain practical experience through internships
-                    and projects.
+                    I am <span class="about-highlight">Chandana G V</span>,
+                    pursuing a Bachelor of Engineering in Information
+                    Science and Engineering at Jawaharlal Nehru New
+                    College of Engineering, Shivamogga. I am developing
+                    my knowledge of programming, databases, and web
+                    technologies. I value problem-solving, teamwork,
+                    and communication, and I am eager to gain practical
+                    experience through internships and projects.
                 </p>
+
             </div>
         </section>
 
         <!-- Education -->
         <section class="education" id="education">
             <div class="container">
+
+                <p class="section-kicker">My academic journey</p>
+
                 <h2 class="section-title">Education</h2>
+
                 <div class="section-line"></div>
 
-                <h3 class="education-heading">
+                <h3 class="degree-title">
                     Bachelor of Engineering (B.E.)
                 </h3>
 
                 <p>Information Science and Engineering</p>
 
-                <p class="college-name">
+                <p class="degree-details">
                     Jawaharlal Nehru New College of Engineering (JNNCE),
                     Shivamogga
                 </p>
 
-                <p class="graduation">
-                    Expected Graduation: 2028
-                </p>
+                <p class="graduation">Expected Graduation: 2028</p>
 
-                <h3 class="results-heading">Semester Results</h3>
+                <h3 class="subheading">Semester Performance</h3>
 
                 <div class="result-grid">
 
-                    <div class="result-box">
-                        <h4>1st Semester</h4>
-                        <p>Semester Grade Point Average</p>
-                        <div class="result-value">8.40 SGPA</div>
-                    </div>
+                    <article class="result-card">
+                        <p class="result-label">First Semester</p>
+                        <p class="result-value">8.40</p>
+                        <p class="result-label">SGPA</p>
+                    </article>
 
-                    <div class="result-box">
-                        <h4>2nd Semester</h4>
-                        <p>Semester Grade Point Average</p>
-                        <div class="result-value">9.10 SGPA</div>
-                    </div>
+                    <article class="result-card">
+                        <p class="result-label">Second Semester</p>
+                        <p class="result-value">9.10</p>
+                        <p class="result-label">SGPA</p>
+                    </article>
 
-                    <div class="result-box">
-                        <h4>3rd Semester</h4>
-                        <p>Semester Grade Point Average</p>
-                        <div class="result-value">8.57 SGPA</div>
-                    </div>
+                    <article class="result-card">
+                        <p class="result-label">Third Semester</p>
+                        <p class="result-value">8.57</p>
+                        <p class="result-label">SGPA</p>
+                    </article>
 
-                    <div class="result-box">
-                        <h4>4th Semester</h4>
-                        <p>Semester Grade Point Average</p>
-                        <div class="result-value">8.73 SGPA</div>
-                    </div>
+                    <article class="result-card">
+                        <p class="result-label">Fourth Semester</p>
+                        <p class="result-value">8.73</p>
+                        <p class="result-label">SGPA</p>
+                    </article>
 
                 </div>
 
-                <h3 class="results-heading">Previous Education</h3>
+                <h3 class="subheading">Previous Education</h3>
 
-                <div class="school-results">
+                <div class="school-grid">
 
-                    <div class="result-box">
+                    <article class="school-card">
                         <h4>Pre-University Course (PUC)</h4>
-                        <p>Percentage</p>
-                        <div class="result-value">88.33%</div>
-                    </div>
+                        <p>Academic Percentage</p>
+                        <span class="school-score">88.33%</span>
+                    </article>
 
-                    <div class="result-box">
+                    <article class="school-card">
                         <h4>SSLC</h4>
-                        <p>Percentage</p>
-                        <div class="result-value">77.40%</div>
-                    </div>
+                        <p>Academic Percentage</p>
+                        <span class="school-score">77.40%</span>
+                    </article>
 
                 </div>
             </div>
@@ -593,20 +761,24 @@
         <!-- Skills -->
         <section class="skills" id="skills">
             <div class="container">
+
+                <p class="section-kicker">What I am learning</p>
+
                 <h2 class="section-title">Skills</h2>
+
                 <div class="section-line"></div>
 
                 <div class="skill-group">
                     <h3>Technical Skills</h3>
 
                     <div class="skill-list">
-                        <span class="skill">C Programming</span>
-                        <span class="skill">Python Basics</span>
-                        <span class="skill">DBMS Basics</span>
-                        <span class="skill">HTML</span>
-                        <span class="skill">CSS</span>
-                        <span class="skill">JavaScript Basics</span>
-                        <span class="skill">Problem Solving</span>
+                        <span class="skill-item">C Programming</span>
+                        <span class="skill-item">Python Basics</span>
+                        <span class="skill-item">DBMS Basics</span>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                        <span class="skill-item">JavaScript Basics</span>
+                        <span class="skill-item">Problem Solving</span>
                     </div>
                 </div>
 
@@ -614,118 +786,4 @@
                     <h3>Professional Skills</h3>
 
                     <div class="skill-list">
-                        <span class="skill">Communication</span>
-                        <span class="skill">Teamwork</span>
-                        <span class="skill">Quick Learner</span>
-                        <span class="skill">Time Management</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="section-line"></div>
-
-                <p class="section-subtitle">
-                    Selected project ideas and technical explorations.
-                </p>
-
-                <div class="project-grid">
-
-                    <article class="project-card">
-                        <span class="project-number">PROJECT 01</span>
-
-                        <h3>Biometric Attendance System</h3>
-
-                        <p>
-                            An attendance system concept that explores the
-                            use of biometric authentication to identify
-                            individuals and support attendance recording.
-                            The idea focuses on improving convenience and
-                            reducing manual attendance work.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Biometrics</span>
-                            <span>Attendance</span>
-                            <span>Technology</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <span class="project-number">PROJECT 02</span>
-
-                        <h3>AI Medical Image Enhancement and Segmentation</h3>
-
-                        <p>
-                            An AI-based medical imaging project exploring
-                            image enhancement and segmentation for MRI
-                            images. The aim is to improve image visibility
-                            and investigate the identification of relevant
-                            regions for further analysis.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Artificial Intelligence</span>
-                            <span>Medical Imaging</span>
-                            <span>Image Processing</span>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates -->
-        <section id="certificates">
-            <div class="container">
-                <h2 class="section-title">Certificates & Achievements</h2>
-                <div class="section-line"></div>
-
-                <ul class="certificate-list">
-
-                    <li>
-                        <strong>
-                            AI Fundamentals & Lifelong Professional Skills
-                        </strong>
-                        <span>
-                            Magic Bus India Foundation and IBM SkillsBuild
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong>
-                            MedhaDrishti-2K26 National-Level AI Hackathon
-                        </strong>
-                        <span>
-                            AI-based Medical Image Enhancement solution
-                            · July 2026
-                        </span>
-                    </li>
-
-                    <li>
-                        <strong>Ideathon Participation</strong>
-                        <span>2026</span>
-                    </li>
-
-                    <li>
-                        <strong>Math Olympiad Participation</strong>
-                        <span>2025</span>
-                    </li>
-
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact Me</h2>
-                <div class="section-line"></div>
-
-                <p class="contact-intro">
-                    Thank you for visiting my portfolio. Feel free to
-                    contact me regarding interns
+                        <span class="skill-item">Co
