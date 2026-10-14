@@ -1,789 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Chandana G V | Personal Portfolio</title>
-
-    <meta name="description"
-          content="Explore the portfolio of Chandana G V, an Information Science and Engineering student.">
-
-    <style>
-        :root {
-            --forest: #294b38;
-            --green: #58765f;
-            --sage: #dce7d9;
-            --cream: #faf8f1;
-            --white: #ffffff;
-            --text: #303831;
-            --muted: #697269;
-            --border: #e0e5dc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 85px;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1080px, 90%);
-            margin: auto;
-        }
-
-        /* Navigation */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--cream);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav {
-            min-height: 74px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            color: var(--forest);
-            font-size: 21px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .nav-links a:hover {
-            color: var(--green);
-        }
-
-        /* Hero section */
-
-        .hero {
-            padding: 110px 0 100px;
-            background: var(--cream);
-        }
-
-        .hero-layout {
-            display: grid;
-            grid-template-columns: 1fr 0.75fr;
-            align-items: center;
-            gap: 65px;
-        }
-
-        .eyebrow {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            color: var(--forest);
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.08;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 {
-            font-size: 21px;
-            font-weight: 500;
-            margin-bottom: 18px;
-        }
-
-        .hero-description {
-            max-width: 560px;
-            color: var(--muted);
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 22px;
-            border: 1px solid var(--forest);
-            border-radius: 4px;
-            background: var(--forest);
-            color: var(--white);
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.2s ease;
-        }
-
-        .button:hover {
-            background: var(--green);
-            border-color: var(--green);
-            transform: translateY(-2px);
-        }
-
-        .button-outline {
-            background: transparent;
-            color: var(--forest);
-        }
-
-        .button-outline:hover {
-            color: var(--white);
-        }
-
-        .hero-note {
-            background: var(--sage);
-            padding: 38px 30px;
-            border-left: 5px solid var(--green);
-        }
-
-        .hero-note .note-label {
-            color: var(--green);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .hero-note h3 {
-            color: var(--forest);
-            font-size: 27px;
-            line-height: 1.3;
-            margin: 15px 0;
-        }
-
-        .hero-note p {
-            color: #536253;
-            font-size: 14px;
-        }
-
-        /* Common sections */
-
-        section {
-            padding: 82px 0;
-        }
-
-        .section-kicker {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            color: var(--forest);
-            font-size: clamp(29px, 4vw, 39px);
-            line-height: 1.25;
-            margin-bottom: 15px;
-        }
-
-        .section-description {
-            color: var(--muted);
-            max-width: 680px;
-            margin-bottom: 35px;
-        }
-
-        .section-line {
-            width: 48px;
-            height: 3px;
-            background: var(--green);
-            margin: 20px 0 26px;
-        }
-
-        /* About */
-
-        .about {
-            background: var(--white);
-        }
-
-        .about-text {
-            max-width: 850px;
-            font-size: 16px;
-            color: #505a50;
-        }
-
-        .about-highlight {
-            color: var(--forest);
-            font-weight: 700;
-        }
-
-        /* Education */
-
-        .education {
-            background: var(--cream);
-        }
-
-        .degree-title {
-            color: var(--forest);
-            font-size: 23px;
-            margin-bottom: 5px;
-        }
-
-        .degree-details {
-            color: var(--muted);
-        }
-
-        .graduation {
-            margin-top: 8px;
-            margin-bottom: 35px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .subheading {
-            color: var(--forest);
-            font-size: 18px;
-            margin-bottom: 18px;
-        }
-
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 15px;
-            margin-bottom: 35px;
-        }
-
-        .result-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-top: 3px solid var(--green);
-            padding: 23px 16px;
-            border-radius: 4px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .result-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(41, 75, 56, 0.08);
-        }
-
-        .result-label {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .result-value {
-            color: var(--forest);
-            font-size: 26px;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-
-        .school-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 15px;
-        }
-
-        .school-card {
-            background: var(--sage);
-            padding: 22px;
-            border-radius: 4px;
-        }
-
-        .school-card h4 {
-            color: var(--forest);
-            margin-bottom: 8px;
-        }
-
-        .school-card p {
-            color: #536253;
-            font-size: 14px;
-        }
-
-        .school-score {
-            display: block;
-            color: var(--forest);
-            font-size: 27px;
-            font-weight: 800;
-            margin-top: 8px;
-        }
-
-        /* Skills */
-
-        .skills {
-            background: var(--white);
-        }
-
-        .skill-group {
-            margin-bottom: 28px;
-        }
-
-        .skill-group h3 {
-            color: var(--forest);
-            font-size: 18px;
-            margin-bottom: 14px;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-item {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            padding: 9px 15px;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        /* Projects */
-
-        .projects {
-            background: var(--cream);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 29px;
-            border-radius: 4px;
-            transition: 0.2s ease;
-        }
-
-        .project-card:hover {
-            border-color: var(--green);
-            transform: translateY(-3px);
-        }
-
-        .project-number {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .project-card h3 {
-            color: var(--forest);
-            font-size: 21px;
-            line-height: 1.4;
-            margin: 14px 0;
-        }
-
-        .project-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .project-tags span {
-            color: var(--forest);
-            background: var(--sage);
-            padding: 5px 9px;
-            font-size: 12px;
-            border-radius: 3px;
-        }
-
-        /* Certificates */
-
-        .certificates {
-            background: var(--white);
-        }
-
-        .certificate-list {
-            list-style: none;
-            border-top: 1px solid var(--border);
-        }
-
-        .certificate-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            padding: 21px 5px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .certificate-name {
-            color: var(--forest);
-            font-weight: 700;
-        }
-
-        .certificate-description {
-            color: var(--muted);
-            font-size: 13px;
-            margin-top: 4px;
-        }
-
-        .certificate-year {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        /* Contact */
-
-        .contact {
-            background: var(--sage);
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 60px;
-        }
-
-        .contact-intro {
-            color: #536253;
-            max-width: 400px;
-        }
-
-        .contact-details {
-            list-style: none;
-        }
-
-        .contact-details li {
-            padding: 18px 0;
-            border-bottom: 1px solid #c6d4c4;
-        }
-
-        .contact-label {
-            display: block;
-            color: var(--green);
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .contact-details a {
-            color: var(--forest);
-            font-weight: 600;
-            overflow-wrap: anywhere;
-        }
-
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-button {
-            margin-top: 25px;
-        }
-
-        /* Footer */
-
-        footer {
-            background: var(--forest);
-            color: var(--white);
-            text-align: center;
-            padding: 24px 15px;
-            font-size: 13px;
-        }
-
-        footer p {
-            opacity: 0.9;
-        }
-
-        /* Mobile layout */
-
-        @media (max-width: 850px) {
-            .hero-layout {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .hero-note {
-                max-width: 600px;
-            }
-
-            .result-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .contact-layout {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                padding: 15px 0;
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .nav-links {
-                gap: 10px 15px;
-            }
-
-            .hero {
-                padding: 70px 0;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .project-grid,
-            .school-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .result-card {
-                padding: 19px 12px;
-            }
-
-            .result-value {
-                font-size: 23px;
-            }
-
-            .certificate-list li {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .hero h1 {
-                letter-spacing: -1px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandana GV | Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{font-family:Arial,sans-serif;background:#fff7fb;color:#392632;line-height:1.7}
+header{background:#fff;border-bottom:2px solid #fbcfe8;position:sticky;top:0;z-index:10}
+nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:22px;font-weight:bold;color:#be185d}
+nav a{display:inline-block;padding:6px;color:#392632;text-decoration:none;font-weight:bold;font-size:13px}
+nav a:hover{color:#db2777}
+main{max-width:1050px;margin:auto;padding:20px}
+section{padding:50px 0 15px;scroll-margin-top:100px}
+h1{font-size:clamp(35px,6vw,55px);color:#9d174d;line-height:1.2;margin:12px 0}
+h2{font-size:30px;color:#9d174d;margin-bottom:20px}
+h3{color:#be185d;margin-bottom:10px}
+p{margin-bottom:12px}
+.hero{background:linear-gradient(135deg,#fff,#fce7f3);padding:45px 28px;border:1px solid #f9a8d4;border-radius:22px}
+.subtitle{font-size:18px;color:#705d68}
+.card{background:#fff;border:1px solid #f3c8dd;border-radius:17px;padding:23px;box-shadow:0 7px 20px #9d174d0c;overflow-wrap:anywhere}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.button{display:inline-block;padding:9px 16px;margin:7px 5px 0 0;background:#db2777;color:white;text-decoration:none;border-radius:24px;font-weight:bold}
+.button:hover{background:#9d174d}
+.light{background:#fce7f3;color:#9d174d}
+.score{color:#db2777;font-size:23px;font-weight:bold}
+.skills{display:flex;flex-wrap:wrap;gap:9px}
+.skill{background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;border-radius:22px;padding:7px 12px;font-weight:bold}
+.muted{color:#705d68;font-size:14px}
+.contact-list{padding-left:20px}
+.contact-list li{margin:12px 0}
+.contact-list a{color:#be185d}
+footer{text-align:center;padding:25px;margin-top:40px;background:#fff;border-top:2px solid #fbcfe8;color:#705d68}
+@media(max-width:700px){nav{flex-direction:column;align-items:flex-start}.grid{grid-template-columns:1fr}section{padding-top:35px}}
+</style>
 </head>
-
 <body>
+<header>
+<nav>
+<span class="logo">Chandana GV</span>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<section id="home">
+<div class="hero">
+<p style="color:#db2777;font-weight:bold">WELCOME TO MY PORTFOLIO</p>
+<h1>Hello, I'm Chandana GV</h1>
+<p class="subtitle">Information Science and Engineering Student</p>
+<p>A motivated engineering student interested in programming, web development, databases, and AI-based solutions.</p>
+<a class="button" href="#projects">View Projects</a>
+<a class="button light" href="#contact">Contact Me</a>
+</div>
+</section>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="container">
-            <a class="logo" href="#home">Chandana G V.</a>
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>I am pursuing B.E. in Information Science and Engineering at Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga.</p>
+<p>I enjoy learning new technologies, solving problems, and working with others. My goal is to develop my technical skills through practical projects and continuous learning.</p>
+</div>
+</section>
 
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">
+<h3>B.E. Information Science and Engineering</h3>
+<p>JNNCE, Shivamogga</p>
+<p>Expected graduation: 2028</p>
+<p>1st Semester: <span class="score">8.4</span></p>
+<p>2nd Semester: <span class="score">9.1</span></p>
+<p>3rd Semester: <span class="score">8.57</span></p>
+<p>4th Semester: <span class="score">8.53</span></p>
+</div>
+<div class="card">
+<h3>Pre-University Course (PUC)</h3>
+<p class="score">88.33%</p>
+<h3>SSLC</h3>
+<p class="score">77.4%</p>
+</div>
+</div>
+</section>
 
-    <main>
+<section id="skills">
+<h2>My Skills</h2>
+<div class="card">
+<h3>Technical Skills</h3>
+<div class="skills">
+<span class="skill">C Programming</span>
+<span class="skill">Python Basics</span>
+<span class="skill">DBMS Basics</span>
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript Basics</span>
+<span class="skill">Problem Solving</span>
+</div>
+<h3 style="margin-top:22px">Professional Skills</h3>
+<div class="skills">
+<span class="skill">Communication</span>
+<span class="skill">Teamwork</span>
+<span class="skill">Quick Learner</span>
+<span class="skill">Time Management</span>
+</div>
+</div>
+</section>
 
-        <!-- Home -->
-        <section class="hero" id="home">
-            <div class="container hero-layout">
+<section id="projects">
+<h2>Projects &amp; Ideas</h2>
+<div class="grid">
+<div class="card">
+<h3>Biometric Attendance System</h3>
+<p>A project concept for recording attendance using biometric authentication to make attendance tracking convenient.</p>
+</div>
+<div class="card">
+<h3>AI Medical Image Enhancement and Segmentation</h3>
+<p>An AI hackathon project exploring MRI image enhancement and region-of-interest segmentation.</p>
+<p class="muted">MedhaDrishti-2K26 AI Hackathon</p>
+</div>
+</div>
+</section>
 
-                <div>
-                    <p class="eyebrow">Welcome to my portfolio</p>
+<section id="certificates">
+<h2>Certificates &amp; Achievements</h2>
+<div class="grid">
+<div class="card">
+<h3>AI Fundamentals &amp; Lifelong Professional Skills</h3>
+<p>Magic Bus India Foundation × IBM SkillsBuild</p>
+<p class="muted">AI fundamentals and professional skills training.</p>
+</div>
+<div class="card">
+<h3>MedhaDrishti-2K26 AI Hackathon</h3>
+<p>Certificate of achievement for an AI-based medical image project.</p>
+</div>
+<div class="card">
+<h3>Ideathon Participation</h3>
+<p>2026</p>
+</div>
+<div class="card">
+<h3>Math Olympiad Participation</h3>
+<p>2025</p>
+</div>
+</div>
+<p class="muted" style="margin-top:12px">Actual certificate files can be linked here after their GitHub file paths are confirmed.</p>
+</section>
 
-                    <h1>Chandana<br>G V.</h1>
-
-                    <h2>Information Science & Engineering Student</h2>
-
-                    <p class="hero-description">
-                        A motivated engineering student with an interest
-                        in programming, web development, and technology.
-                        I enjoy learning new skills, exploring ideas,
-                        and building my technical knowledge through
-                        practical projects.
-                    </p>
-
-                    <div class="buttons">
-                        <a href="#projects" class="button">
-                            Explore Projects
-                        </a>
-
-                        <a href="#contact" class="button button-outline">
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-
-                <aside class="hero-note">
-                    <p class="note-label">A little about me</p>
-
-                    <h3>Learning today.<br>Building for tomorrow.</h3>
-
-                    <p>
-                        I believe in continuous learning, clear
-                        communication, teamwork, and improving one
-                        skill at a time.
-                    </p>
-                </aside>
-
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="about" id="about">
-            <div class="container">
-
-                <p class="section-kicker">Get to know me</p>
-
-                <h2 class="section-title">About Me</h2>
-
-                <div class="section-line"></div>
-
-                <p class="about-text">
-                    I am <span class="about-highlight">Chandana G V</span>,
-                    pursuing a Bachelor of Engineering in Information
-                    Science and Engineering at Jawaharlal Nehru New
-                    College of Engineering, Shivamogga. I am developing
-                    my knowledge of programming, databases, and web
-                    technologies. I value problem-solving, teamwork,
-                    and communication, and I am eager to gain practical
-                    experience through internships and projects.
-                </p>
-
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="education" id="education">
-            <div class="container">
-
-                <p class="section-kicker">My academic journey</p>
-
-                <h2 class="section-title">Education</h2>
-
-                <div class="section-line"></div>
-
-                <h3 class="degree-title">
-                    Bachelor of Engineering (B.E.)
-                </h3>
-
-                <p>Information Science and Engineering</p>
-
-                <p class="degree-details">
-                    Jawaharlal Nehru New College of Engineering (JNNCE),
-                    Shivamogga
-                </p>
-
-                <p class="graduation">Expected Graduation: 2028</p>
-
-                <h3 class="subheading">Semester Performance</h3>
-
-                <div class="result-grid">
-
-                    <article class="result-card">
-                        <p class="result-label">First Semester</p>
-                        <p class="result-value">8.40</p>
-                        <p class="result-label">SGPA</p>
-                    </article>
-
-                    <article class="result-card">
-                        <p class="result-label">Second Semester</p>
-                        <p class="result-value">9.10</p>
-                        <p class="result-label">SGPA</p>
-                    </article>
-
-                    <article class="result-card">
-                        <p class="result-label">Third Semester</p>
-                        <p class="result-value">8.57</p>
-                        <p class="result-label">SGPA</p>
-                    </article>
-
-                    <article class="result-card">
-                        <p class="result-label">Fourth Semester</p>
-                        <p class="result-value">8.73</p>
-                        <p class="result-label">SGPA</p>
-                    </article>
-
-                </div>
-
-                <h3 class="subheading">Previous Education</h3>
-
-                <div class="school-grid">
-
-                    <article class="school-card">
-                        <h4>Pre-University Course (PUC)</h4>
-                        <p>Academic Percentage</p>
-                        <span class="school-score">88.33%</span>
-                    </article>
-
-                    <article class="school-card">
-                        <h4>SSLC</h4>
-                        <p>Academic Percentage</p>
-                        <span class="school-score">77.40%</span>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="skills" id="skills">
-            <div class="container">
-
-                <p class="section-kicker">What I am learning</p>
-
-                <h2 class="section-title">Skills</h2>
-
-                <div class="section-line"></div>
-
-                <div class="skill-group">
-                    <h3>Technical Skills</h3>
-
-                    <div class="skill-list">
-                        <span class="skill-item">C Programming</span>
-                        <span class="skill-item">Python Basics</span>
-                        <span class="skill-item">DBMS Basics</span>
-                        <span class="skill-item">HTML</span>
-                        <span class="skill-item">CSS</span>
-                        <span class="skill-item">JavaScript Basics</span>
-                        <span class="skill-item">Problem Solving</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Professional Skills</h3>
-
-                    <div class="skill-list">
-                        <span class="skill-item">Co
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="grid">
+<div class="card">
+<h3>Get in Touch</h3>
+<ul class="contact-list">
+<li><strong>Email:</strong> <a href="mailto:chandanagv716@gmail.com">chandanagv716@gmail.com</a></li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chandana-g-v-950a6235b" target="_blank" rel="noopener noreferrer">Visit my LinkedIn profile</a></li>
+<li><strong>Location:</strong> Shivamogga, Karnataka, India</li>
+</ul>
+</div>
+<div class="card">
+<h3>Let's Connect!</h3>
+<p>I welcome opportunities to learn, collaborate, and discuss technology projects.</p>
+<a class="button" href="mailto:chandanagv716@gmail.com">Send Email</a>
+<a class="button light" href="https://www.linkedin.com/in/chandana-g-v-950a6235b" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<p>© <span id="year">2026</span> Chandana GV | Made with care</p>
+</footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
