@@ -3,156 +3,721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandana GV | Portfolio</title>
+<meta name="theme-color" content="#fff7fb">
+<meta name="description" content="Chandana GV's personal portfolio featuring education, technical skills, projects, certificates and achievements.">
+<title>Chandana GV | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:130px}
-body{font-family:Arial,sans-serif;background:#fff7fb;color:#392632;line-height:1.7}
-header{background:#fff;border-bottom:2px solid #fbcfe8;position:sticky;top:0;z-index:10}
-nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.logo{font-size:22px;font-weight:bold;color:#be185d}
-nav a{display:inline-block;padding:6px;color:#392632;text-decoration:none;font-weight:bold;font-size:13px}
-nav a:hover{color:#db2777}
-main{max-width:1050px;margin:auto;padding:20px}
-section{padding:50px 0 15px;scroll-margin-top:100px}
-h1{font-size:clamp(35px,6vw,55px);color:#9d174d;line-height:1.2;margin:12px 0}
-h2{font-size:30px;color:#9d174d;margin-bottom:20px}
-h3{color:#be185d;margin-bottom:10px}
-p{margin-bottom:12px}
-.hero{background:linear-gradient(135deg,#fff,#fce7f3);padding:45px 28px;border:1px solid #f9a8d4;border-radius:22px}
-.subtitle{font-size:18px;color:#705d68}
-.card{background:#fff;border:1px solid #f3c8dd;border-radius:17px;padding:23px;box-shadow:0 7px 20px #9d174d0c;overflow-wrap:anywhere}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.button{display:inline-block;padding:9px 16px;margin:7px 5px 0 0;background:#db2777;color:white;text-decoration:none;border-radius:24px;font-weight:bold}
-.button:hover{background:#9d174d}
-.light{background:#fce7f3;color:#9d174d}
-.score{color:#db2777;font-size:23px;font-weight:bold}
-.skills{display:flex;flex-wrap:wrap;gap:9px}
-.skill{background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;border-radius:22px;padding:7px 12px;font-weight:bold}
-.muted{color:#705d68;font-size:14px}
-.contact-list{padding-left:20px}
-.contact-list li{margin:12px 0}
-.contact-list a{color:#be185d}
-footer{text-align:center;padding:25px;margin-top:40px;background:#fff;border-top:2px solid #fbcfe8;color:#705d68}
-@media(max-width:700px){nav{flex-direction:column;align-items:flex-start}.grid{grid-template-columns:1fr}section{padding-top:35px}}
+:root {
+  --bg: #fff7fb;
+  --white: #ffffff;
+  --pink: #db2777;
+  --deep: #9d174d;
+  --text: #392632;
+  --muted: #705d68;
+  --light: #fce7f3;
+  --border: #f3c8dd;
+  --shadow: 0 8px 25px rgba(157,23,77,.07);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.container, main {
+  width: min(1050px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid #fbcfe8;
+}
+
+nav {
+  width: min(1150px, 94%);
+  margin: auto;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--deep);
+  white-space: nowrap;
+}
+
+.logo span { color: var(--pink); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--pink);
+  background: var(--light);
+}
+
+.menu-btn {
+  display: none;
+  background: var(--light);
+  border: 0;
+  color: var(--deep);
+  padding: 10px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+main { padding: 22px 0; }
+
+section {
+  padding: 48px 0 20px;
+  scroll-margin-top: 85px;
+}
+
+.hero {
+  padding: 60px 40px;
+  border: 1px solid #f9a8d4;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff, #fce7f3);
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  align-items: center;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 57px);
+  color: var(--deep);
+  line-height: 1.15;
+  margin: 12px 0;
+  letter-spacing: -1.8px;
+}
+
+h2 {
+  font-size: clamp(26px, 4vw, 34px);
+  color: var(--deep);
+  margin-bottom: 15px;
+  letter-spacing: -.7px;
+}
+
+h3 { color: var(--deep); margin-bottom: 10px; }
+h4 { color: var(--deep); margin-bottom: 12px; }
+p { margin-bottom: 12px; }
+
+.subtitle {
+  color: var(--pink);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.muted, .section-description {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid white;
+  outline: 2px solid #f9a8d4;
+  background: var(--light);
+  box-shadow: 0 10px 30px #9d174d18;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.photo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  text-align: center;
+  color: var(--pink);
+}
+
+.photo-placeholder i { font-size: 65px; }
+.photo-placeholder p { font-size: 11px; margin-top: 8px; }
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 17px;
+  margin: 7px 5px 0 0;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: var(--pink);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--deep);
+  transform: translateY(-2px);
+}
+
+.button.light {
+  background: var(--light);
+  border-color: #f9a8d4;
+  color: var(--deep);
+}
+
+.button.light:hover { background: #fbcfe8; }
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  overflow-wrap: anywhere;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #9d174d12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+}
+
+.section-heading { margin-bottom: 22px; }
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skill, .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--light);
+  color: var(--deep);
+  border: 1px solid #f9a8d4;
+  border-radius: 24px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.skill i { color: var(--pink); }
+
+.project-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--light);
+  color: var(--pink);
+  border-radius: 13px;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-card p { font-size: 14px; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 7px 0 15px;
+}
+
+.tag { font-size: 11px; padding: 5px 10px; }
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--pink);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.text-link:hover { color: var(--deep); }
+
+.education-profile {
+  display: grid;
+  gap: 18px;
+}
+
+.education-feature {
+  padding: 28px;
+  background: linear-gradient(135deg,#fff,#fce7f3);
+  border: 1px solid #f9a8d4;
+  border-radius: 19px;
+}
+
+.education-label {
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.education-branch { color: var(--pink); font-weight: 600; }
+
+.education-college { font-weight: 600; }
+
+.education-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid var(--border);
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.education-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.education-score strong {
+  color: var(--pink);
+  font-size: 21px;
+}
+
+.education-score span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 17px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  margin-top: 12px;
+}
+
+.education-item h3 { font-size: 15px; }
+.education-item p { margin-bottom: 0; }
+.education-details { flex: 1; min-width: 0; }
+
+.education-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--light);
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.semester-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.semester {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.semester span { font-size: 12px; }
+.semester strong { color: var(--pink); }
+
+.certificate-icon {
+  font-size: 25px;
+  color: var(--pink);
+  margin-bottom: 13px;
+}
+
+.certificate-card .muted { margin-bottom: 10px; }
+
+.github-panel {
+  text-align: center;
+  padding: 38px 24px;
+  background: linear-gradient(135deg,#fff,#fce7f3);
+}
+
+.github-panel > i {
+  font-size: 54px;
+  color: var(--deep);
+  margin-bottom: 15px;
+}
+
+.github-panel p {
+  max-width: 590px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+}
+
+.contact-list {
+  list-style: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-list li {
+  margin: 14px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-list i {
+  color: var(--pink);
+  margin-top: 5px;
+  width: 18px;
+}
+
+.contact-list a {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.contact-list a:hover { text-decoration: underline; }
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  background: var(--light);
+  color: var(--deep);
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  transition: .2s;
+}
+
+.socials a:hover {
+  background: var(--pink);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.contact-message {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 17px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 30px;
+  background: white;
+  border-top: 2px solid #fbcfe8;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  background: var(--pink);
+  color: white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 20;
+}
+
+#topBtn:hover { background: var(--deep); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:850px) {
+  nav { flex-wrap: wrap; padding: 13px 0; }
+  .menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 14px; padding: 10px; }
+  .hero { grid-template-columns: 1fr; padding: 35px 25px; }
+  .hero-photo { grid-row: 1; }
+  .photo-circle { width: 165px; height: 165px; }
+  .photo-placeholder i { font-size: 45px; }
+}
+
+@media(max-width:600px) {
+  main { width: 92%; }
+  section { padding-top: 35px; }
+  .grid { grid-template-columns: 1fr; }
+  .semester-list { grid-template-columns: 1fr; }
+  .card, .education-feature { padding: 20px; }
+  h1 { letter-spacing: -1px; }
+  .education-item { gap: 9px; padding: 12px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
 </style>
 </head>
+
 <body>
 <header>
 <nav>
-<span class="logo">Chandana GV</span>
-<div>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
-</div>
+  <a href="#home" class="logo">Chandana <span>GV.</span></a>
+
+  <button class="menu-btn" id="menuBtn"
+    aria-label="Open navigation" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 </header>
+
 <main>
+
+<!-- HOME -->
 <section id="home">
-<div class="hero">
-<p style="color:#db2777;font-weight:bold">WELCOME TO MY PORTFOLIO</p>
-<h1>Hello, I'm Chandana GV</h1>
-<p class="subtitle">Information Science and Engineering Student</p>
-<p>A motivated engineering student interested in programming, web development, databases, and AI-based solutions.</p>
-<a class="button" href="#projects">View Projects</a>
-<a class="button light" href="#contact">Contact Me</a>
-</div>
+  <div class="hero reveal">
+    <div>
+      <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+      <h1>Hello, I'm <span style="color:#db2777">Chandana GV</span></h1>
+      <p class="subtitle">Engineering Student | Aspiring Developer</p>
+      <p>
+        A motivated engineering student interested in programming,
+        web development, databases, and AI-based solutions.
+        I enjoy learning new technologies and turning ideas into projects.
+      </p>
+      <a class="button" href="#projects">
+        <i class="fa-solid fa-code"></i> View Projects
+      </a>
+      <a class="button light" href="#contact">
+        <i class="fa-regular fa-envelope"></i> Contact Me
+      </a>
+      <a class="button light" href="resume.pdf" download>
+        <i class="fa-solid fa-download"></i> Download Resume
+      </a>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-circle">
+        <img src="profile.jpg" alt="Chandana GV"
+          onerror="this.style.display='none';">
+        <div class="photo-placeholder">
+          <i class="fa-regular fa-user"></i>
+          <p>Add your photo as profile.jpg</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="about">
-<h2>About Me</h2>
-<div class="card">
-<p>I am pursuing B.E. in Information Science and Engineering at Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga.</p>
-<p>I enjoy learning new technologies, solving problems, and working with others. My goal is to develop my technical skills through practical projects and continuous learning.</p>
-</div>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="section-heading">
+    <p class="eyebrow">GET TO KNOW ME</p>
+    <h2>About Me</h2>
+    <p class="section-description">A little about my journey and goals.</p>
+  </div>
+
+  <div class="card">
+    <p>
+      I am pursuing B.E. in Information Science and Engineering at
+      Jawaharlal Nehru New College of Engineering (JNNCE), Shivamogga.
+    </p>
+    <p>
+      I enjoy learning new technologies, solving problems, and working
+      with others. My goal is to improve my technical skills through
+      practical projects, internships, and continuous learning.
+    </p>
+    <p>
+      I am particularly interested in software development, web technologies,
+      databases, and exploring applications of artificial intelligence.
+    </p>
+  </div>
 </section>
 
-
-<section id="education">
-  <h2>Academic Journey</h2>
-  <p class="muted">
-    Building my foundation in technology, learning, and innovation.
-  </p>
+<!-- EDUCATION -->
+<section id="education" class="reveal">
+  <div class="section-heading">
+    <p class="eyebrow">MY ACADEMIC BACKGROUND</p>
+    <h2>Academic Journey</h2>
+    <p class="muted">Building my foundation in technology and innovation.</p>
+  </div>
 
   <div class="education-profile">
-
     <div class="education-feature">
       <span class="education-label">CURRENTLY PURSUING</span>
       <h3>Bachelor of Engineering (B.E.)</h3>
-      <p class="education-branch">
-        Information Science and Engineering
-      </p>
+      <p class="education-branch">Information Science and Engineering</p>
       <p class="education-college">
         Jawaharlal Nehru New College of Engineering (JNNCE)
       </p>
       <p class="muted">
-        Affiliated to Visvesvaraya Technological University (VTU),
-        Belagavi
+        Affiliated to Visvesvaraya Technological University (VTU), Belagavi
       </p>
       <p class="muted">Shivamogga, Karnataka</p>
 
       <div class="education-footer">
-        <span>2024 — 2028</span>
+        <span><i class="fa-regular fa-calendar"></i> 2024 — 2028</span>
         <span>Undergraduate</span>
       </div>
 
-      <div class="education-score" style="margin-top: 20px;">
-        <strong>8.65 / 10</strong>
-        <span>Estimated CGPA (after 4 semesters)</span>
-      </div>
-
-      <div style="margin-top: 20px;">
+      <div style="margin-top:20px">
         <h4>Semester-wise SGPA</h4>
-
-        <div class="education-item">
-          <div class="education-details">
-            <p>1st Semester</p>
-          </div>
-          <div class="education-score">
-            <strong>8.40</strong>
-            <span>SGPA</span>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-details">
-            <p>2nd Semester</p>
-          </div>
-          <div class="education-score">
-            <strong>9.10</strong>
-            <span>SGPA</span>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-details">
-            <p>3rd Semester</p>
-          </div>
-          <div class="education-score">
-            <strong>8.57</strong>
-            <span>SGPA</span>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-details">
-            <p>4th Semester</p>
-          </div>
-          <div class="education-score">
-            <strong>8.53</strong>
-            <span>SGPA</span>
-          </div>
+        <p class="muted">
+          Scores listed below are semester GPAs, not percentages.
+        </p>
+        <div class="semester-list">
+          <div class="semester"><span>1st Semester</span><strong>8.40</strong></div>
+          <div class="semester"><span>2nd Semester</span><strong>9.10</strong></div>
+          <div class="semester"><span>3rd Semester</span><strong>8.57</strong></div>
+          <div class="semester"><span>4th Semester</span><strong>8.53</strong></div>
         </div>
       </div>
+
+      <p class="muted" style="margin-top:15px">
+        Confirm your official cumulative CGPA with your university results
+        before adding it to your portfolio.
+      </p>
     </div>
 
-    <div class="education-previous">
-
+    <div>
       <div class="education-item">
         <div class="education-icon">PUC</div>
         <div class="education-details">
@@ -160,8 +725,7 @@ footer{text-align:center;padding:25px;margin-top:40px;background:#fff;border-top
           <p class="muted">Higher Secondary Education</p>
         </div>
         <div class="education-score">
-          <strong>88.33%</strong>
-          <span>Score</span>
+          <strong>88.33%</strong><span>Score</span>
         </div>
       </div>
 
@@ -172,117 +736,123 @@ footer{text-align:center;padding:25px;margin-top:40px;background:#fff;border-top
           <p class="muted">Secondary Education</p>
         </div>
         <div class="education-score">
-          <strong>77.4%</strong>
-          <span>Score</span>
+          <strong>77.4%</strong><span>Score</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-<section id="skills">
-<h2>My Skills</h2>
-<div class="card">
-<h3>Technical Skills</h3>
-<div class="skills">
-<span class="skill">C Programming</span>
-<span class="skill">Python Basics</span>
-<span class="skill">DBMS Basics</span>
-<span class="skill">HTML</span>
-<span class="skill">CSS</span>
-<span class="skill">JavaScript Basics</span>
-<span class="skill">Problem Solving</span>
-</div>
-<h3 style="margin-top:22px">Professional Skills</h3>
-<div class="skills">
-<span class="skill">Communication</span>
-<span class="skill">Teamwork</span>
-<span class="skill">Quick Learner</span>
-<span class="skill">Time Management</span>
-</div>
-</div>
-</section>
 
-<section id="projects">
-<h2>Projects &amp; Ideas</h2>
-<div class="grid">
-<div class="card">
-<h3>Biometric Attendance System</h3>
-<p>A project concept for recording attendance using biometric authentication to make attendance tracking convenient.</p>
-</div>
-<div class="card">
-<h3>AI Medical Image Enhancement and Segmentation</h3>
-<p>An AI hackathon project exploring MRI image enhancement and region-of-interest segmentation.</p>
-<p class="muted">MedhaDrishti-2K26 AI Hackathon</p>
-</div>
-</div>
-</section>
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <div class="section-heading">
+    <p class="eyebrow">WHAT I AM LEARNING</p>
+    <h2>My Skills</h2>
+  </div>
 
-<section id="certificates">
-<h2>Certificates &amp; Achievements</h2>
-<div class="grid">
-<div class="card">
-<h3>AI Fundamentals &amp; Lifelong Professional Skills</h3>
-<p>Magic Bus India Foundation × IBM SkillsBuild</p>
-<p class="muted">AI fundamentals and professional skills training.</p>
-  <a href="certificates/Magic%20Bus2.jpeg" target="_blank">View Certificate</a>
-  <a href="certificates/Magic%20Bus.jpeg" target="_blank">View Certificate</a>
-</div>
-<div class="card">
-<h3>MedhaDrishti-2K26 AI Hackathon</h3>
-<p>Certificate of achievement for an AI-based medical image project.</p>
-  <a href="certificates/Hackathon.jpeg" target="_blank">View Certificate</a>
-</div>
   <div class="card">
-  <h3>MongoDB Certificate</h3>
-  <p>MongoDB training or course completion</p>
-  <a href="certificates/MangoDB.jpeg" target="_blank">View Certificate</a>
-</div>
+    <h3>Technical Skills</h3>
+    <div class="skills">
+      <span class="skill"><i class="fa-solid fa-code"></i>C Programming</span>
+      <span class="skill"><i class="fa-brands fa-python"></i>Python Basics</span>
+      <span class="skill"><i class="fa-solid fa-database"></i>DBMS Basics</span>
+      <span class="skill"><i class="fa-brands fa-html5"></i>HTML</span>
+      <span class="skill"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+      <span class="skill"><i class="fa-brands fa-js"></i>JavaScript Basics</span>
+      <span class="skill"><i class="fa-solid fa-lightbulb"></i>Problem Solving</span>
+    </div>
 
-<div class="card">
-  <h3>Infosys Certificate</h3>
-  <p>Infosys course completion</p>
- <a href="certificates/Infosys.jpeg" target="_blank">View Certificate</a>
-</div>
-<div class="card">
-<h3>Ideathon Participation</h3>
-<p>2026</p>
-  <a href="certificates/Ideathon.jpeg" target="_blank">View Certificate</a>
-</div>
-<div class="card">
-<h3>Math Olympiad Participation</h3>
-<p>2025</p>
-  <a href="certificates/Math%20Olympiad%20Contest.jpeg" target="_blank">View Certificate</a>
-</div>
-</div>
-<p class="muted" style="margin-top:12px">Actual certificate files can be linked here after their GitHub file paths are confirmed.</p>
+    <h3 style="margin-top:24px">Professional Skills</h3>
+    <div class="skills">
+      <span class="skill">Communication</span>
+      <span class="skill">Teamwork</span>
+      <span class="skill">Quick Learner</span>
+      <span class="skill">Time Management</span>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-<h2>Contact Me</h2>
-<div class="grid">
-<div class="card">
-<h3>Get in Touch</h3>
-<ul class="contact-list">
-<li><strong>Email:</strong> <a href="mailto:chandanagv716@gmail.com">chandanagv716@gmail.com</a></li>
-<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chandana-g-v-950a6235b" target="_blank" rel="noopener noreferrer">Visit my LinkedIn profile</a></li>
-<li><strong>Location:</strong> Shivamogga, Karnataka, India</li>
-</ul>
-</div>
-<div class="card">
-<h3>Let's Connect!</h3>
-<p>I welcome opportunities to learn, collaborate, and discuss technology projects.</p>
-<a class="button" href="mailto:chandanagv716@gmail.com">Send Email</a>
-<a class="button light" href="https://www.linkedin.com/in/chandana-g-v-950a6235b" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<p>© <span id="year">2026</span> Chandana GV | Made with care</p>
-</footer>
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
-</body>
-</html>
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="section-heading">
+    <p class="eyebrow">MY WORK</p>
+    <h2>Projects & Ideas</h2>
+    <p class="section-description">
+      Project concepts and technical work I have explored.
+      Add repository links when your code is uploaded.
+    </p>
+  </div>
+
+  <div class="grid">
+    <article class="card project-card">
+      <div class="project-icon"><i class="fa-solid fa-fingerprint"></i></div>
+      <h3>Biometric Attendance System</h3>
+      <p>
+        A project concept for recording attendance using biometric
+        authentication to make attendance tracking convenient.
+      </p>
+      <div class="tags">
+        <span class="tag">Project Concept</span>
+        <span class="tag">Problem Solving</span>
+      </div>
+      <div class="project-links">
+        <a class="text-link" href="https://github.com/YOUR-USERNAME"
+          target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> My GitHub
+        </a>
+      </div>
+    </article>
+
+    <article class="card project-card">
+      <div class="project-icon"><i class="fa-solid fa-brain"></i></div>
+      <h3>AI Medical Image Enhancement</h3>
+      <p>
+        An AI hackathon project exploring MRI image enhancement and
+        region-of-interest segmentation.
+      </p>
+      <p class="muted">MedhaDrishti-2K26 AI Hackathon</p>
+      <div class="tags">
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag">Medical Imaging</span>
+        <span class="tag">Python</span>
+      </div>
+      <div class="project-links">
+        <a class="text-link" href="https://github.com/YOUR-USERNAME"
+          target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> My GitHub
+        </a>
+      </div>
+    </article>
+
+    <article class="card project-card">
+      <div class="project-icon"><i class="fa-solid fa-calculator"></i></div>
+      <h3>Customer Billing System</h3>
+      <p>
+        A C programming project for calculating bills from selected
+        products, quantities, and prices.
+      </p>
+      <div class="tags">
+        <span class="tag">C Programming</span>
+        <span class="tag">Billing</span>
+      </div>
+      <div class="project-links">
+        <a class="text-link" href="https://github.com/YOUR-USERNAME"
+          target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> My GitHub
+        </a>
+      </div>
+    </article>
+
+    <article class="card project-card">
+      <div class="project-icon"><i class="fa-solid fa-book-open"></i></div>
+      <h3>Book Issue & Return System</h3>
+      <p>
+        A library management project for recording book information,
+        issues, and returns.
+      </p>
+      <div class="tags">
+        <span class="tag">C Programming</span>
+        <span class="tag">Data Management</span>
+      </div>
+      <div class="project-links">
+        <a class="text-link" href="https://github.com/YOUR-USERNAME"
