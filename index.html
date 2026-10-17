@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#fff7f2">
-<meta name="description" content="Chandana G V - Personal Portfolio">
-<title>Chandana G V | Portfolio</title>
+<meta name="description" content="Chandana G V's personal portfolio, education, skills, projects and certificates.">
+<title>Chandana G V | Personal Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,6 +21,7 @@
   --text: #45343c;
   --muted: #816c74;
   --border: #f0dce3;
+  --shadow: 0 12px 35px rgba(135, 73, 98, 0.09);
 }
 
 * {
@@ -36,8 +39,8 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .container {
@@ -49,16 +52,17 @@ a {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(255,247,240,.97);
+  z-index: 100;
+  background: rgba(255, 247, 240, 0.96);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
 nav {
-  min-height: 75px;
+  min-height: 76px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -72,7 +76,7 @@ nav {
   flex-wrap: wrap;
   gap: 17px;
   list-style: none;
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 600;
 }
 
@@ -92,7 +96,7 @@ nav {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1.3fr .8fr;
+  grid-template-columns: 1.3fr 0.8fr;
   align-items: center;
   gap: 45px;
 }
@@ -101,7 +105,7 @@ nav {
   color: var(--dark-pink);
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: .78rem;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
@@ -128,10 +132,10 @@ h1 {
 .hero-description {
   color: var(--muted);
   margin-bottom: 25px;
-  max-width: 520px;
+  max-width: 530px;
 }
 
-.buttons {
+.buttons, .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -142,9 +146,9 @@ h1 {
   padding: 11px 21px;
   border-radius: 30px;
   border: 1px solid var(--pink);
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .btn-primary {
@@ -154,18 +158,20 @@ h1 {
 
 .btn-outline {
   color: var(--dark-pink);
+  background: transparent;
 }
 
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: var(--shadow);
 }
 
 .hero-art {
-  min-height: 310px;
+  min-height: 320px;
   border-radius: 48% 48% 25px 25px;
   background: linear-gradient(145deg, #f5cbdc, #fff0df);
   border: 5px solid white;
-  box-shadow: 0 12px 35px #ad456e15;
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,6 +182,7 @@ h1 {
 
 .flower {
   font-size: 5rem;
+  margin-bottom: 12px;
 }
 
 .hero-art h2 {
@@ -189,7 +196,7 @@ h1 {
 
 section {
   padding: 80px 0;
-  scroll-margin-top: 75px;
+  scroll-margin-top: 80px;
 }
 
 .section-heading {
@@ -211,7 +218,7 @@ section {
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 27px;
-  box-shadow: 0 8px 25px #ad456e0b;
+  box-shadow: 0 8px 25px rgba(173, 69, 110, 0.05);
 }
 
 .about-card {
@@ -224,67 +231,11 @@ section {
   margin-bottom: 14px;
 }
 
-.skills-grid, .projects-grid, .achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+.about-card p:last-child {
+  margin-bottom: 0;
 }
 
-.card {
-  transition: .25s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px #ad456e15;
-}
-
-.card-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: .93rem;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.skill-tags span {
-  background: var(--light-pink);
-  color: var(--dark-pink);
-  padding: 5px 11px;
-  border-radius: 20px;
-  font-size: .78rem;
-  font-weight: 600;
-}
-
-#projects {
-  background: #fff0f3;
-}
-
-.project-link {
-  display: inline-block;
-  margin-top: 18px;
-  color: var(--dark-pink);
-  font-weight: 700;
-  font-size: .9rem;
-}
-
-.project-link:hover {
-  text-decoration: underline;
-}
+/* Education */
 
 .timeline {
   max-width: 760px;
@@ -316,7 +267,7 @@ section {
 
 .timeline-item h3 {
   font-size: 1.3rem;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 .timeline-item p {
@@ -326,7 +277,72 @@ section {
 .date {
   color: var(--dark-pink);
   font-weight: 700;
-  font-size: .84rem;
+  font-size: 0.84rem;
+}
+
+/* Skills, projects and achievements */
+
+.skills-grid, .projects-grid, .achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow-wrap: anywhere;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.skill-tags span {
+  background: var(--light-pink);
+  color: var(--dark-pink);
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+#projects {
+  background: #fff0f3;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--dark-pink);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
 
 #contact {
@@ -346,20 +362,17 @@ section {
 }
 
 .contact-links {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
 }
 
 footer {
   padding: 25px 15px;
   text-align: center;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
-@media(max-width: 800px) {
+@media (max-width: 800px) {
   .hero-content {
     grid-template-columns: 1fr;
   }
@@ -380,18 +393,22 @@ footer {
   }
 }
 
-@media(max-width: 520px) {
+@media (max-width: 520px) {
   .skills-grid, .projects-grid, .achievements-grid {
     grid-template-columns: 1fr;
   }
 
   .nav-links {
     gap: 12px;
-    font-size: .78rem;
+    font-size: 0.78rem;
   }
 
   section {
     padding: 60px 0;
+  }
+
+  .about-card, .contact-card {
+    padding: 22px;
   }
 }
 </style>
@@ -404,16 +421,18 @@ footer {
     <a href="#home" class="logo">C.</a>
     <ul class="nav-links">
       <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Certificates</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#skills">Technical Skills</a></li>
+      <li><a href="#projects">Featured Projects</a></li>
+      <li><a href="#achievements">Certificates</a></li>
+      <li><a href="#contact">Contact Me</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
+
+<!-- HOME -->
 <section class="hero" id="home">
   <div class="container hero-content">
     <div>
@@ -440,6 +459,7 @@ footer {
   </div>
 </section>
 
+<!-- ABOUT ME -->
 <section id="about">
   <div class="container">
     <div class="section-heading">
@@ -447,6 +467,7 @@ footer {
       <h2>About Me</h2>
       <p>A curious mind with a passion for learning.</p>
     </div>
+
     <div class="about-card">
       <p>
         Hello! I'm Chandana G V, an Information Science Engineering
@@ -464,6 +485,43 @@ footer {
   </div>
 </section>
 
+<!-- EDUCATION: IMMEDIATELY AFTER ABOUT ME -->
+<section id="education">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">My academic journey</span>
+      <h2>Education</h2>
+      <p>The foundation of my future goals.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-item">
+        <span class="date">2024 – 2028</span>
+        <h3>Bachelor of Engineering</h3>
+        <p><strong>Information Science and Engineering</strong></p>
+        <p>Jawaharlal Nehru New College of Engineering (JNNCE)</p>
+        <p>Shivamogga, Karnataka</p>
+        <p>Affiliated with Visvesvaraya Technological University (VTU)</p>
+      </article>
+
+      <article class="timeline-item">
+        <span class="date">PUC / 12th Standard</span>
+        <h3>Pre-University Education</h3>
+        <p><strong>Akshara Residential College</strong></p>
+        <p>Add your stream and passing year.</p>
+      </article>
+
+      <article class="timeline-item">
+        <span class="date">SSLC / 10th Standard</span>
+        <h3>Secondary Education</h3>
+        <p><strong>Akshara Residential School</strong></p>
+        <p>Add your passing year.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-heading">
@@ -486,7 +544,7 @@ footer {
       <article class="card">
         <div class="card-icon"></div>
         <h3>Web Development</h3>
-        <p>Learning how to design and build responsive websites.</p>
+        <p>Learning to design and build responsive websites.</p>
         <div class="skill-tags">
           <span>HTML</span>
           <span>CSS</span>
@@ -508,17 +566,18 @@ footer {
   </div>
 </section>
 
+<!-- FEATURED PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">Ideas into action</span>
       <h2>Featured Projects</h2>
-      <p>Projects and ideas from my learning journey.</p>
+      <p>Projects from my learning journey.</p>
     </div>
 
     <div class="projects-grid">
       <article class="card">
-        <div class="card-icon">🌸</div>
+        <div class="card-icon"></div>
         <h3>Personal Portfolio</h3>
         <p>
           A responsive website showcasing my skills, education,
@@ -527,24 +586,34 @@ footer {
         <div class="skill-tags">
           <span>HTML</span><span>CSS</span>
         </div>
-        <a class="project-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Add project link ↗</a>
+        <!-- Replace with your actual repository URL -->
+        <a class="project-link"
+           href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          View Project ↗
+        </a>
       </article>
 
       <article class="card">
         <div class="card-icon">🧾</div>
         <h3>Laptop Billing System</h3>
         <p>
-          A beginner C project concept for selecting products,
+          A beginner C programming project for selecting products,
           calculating prices and generating a bill.
         </p>
         <div class="skill-tags">
-          <span>C Programming</span><span>Logic</span>
+          <span>C Programming</span><span>Logic Building</span>
         </div>
-        <a class="project-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Add project link ↗</a>
+        <!-- Replace with your actual repository URL -->
+        <a class="project-link"
+           href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          View Project ↗
+        </a>
       </article>
 
       <article class="card">
-        <div class="card-icon">📚</div>
+        <div class="card-icon"></div>
         <h3>Book Issue & Return</h3>
         <p>
           A library management project concept for tracking
@@ -553,112 +622,102 @@ footer {
         <div class="skill-tags">
           <span>C Programming</span><span>Data Management</span>
         </div>
-        <a class="project-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Add project link ↗</a>
+        <!-- Replace with your actual repository URL -->
+        <a class="project-link"
+           href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          View Project ↗
+        </a>
       </article>
     </div>
   </div>
 </section>
 
+<!-- CERTIFICATES AND ACHIEVEMENTS -->
 <section id="achievements">
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">My milestones</span>
       <h2>Certificates & Achievements</h2>
-      <p>Experiences that inspire me to keep learning.</p>
+      <p>Learning experiences and accomplishments.</p>
     </div>
 
     <div class="achievements-grid">
+
       <article class="card">
-        <div class="card-icon">🏅</div>
+        <div class="card-icon"></div>
         <h3>AI Fundamentals</h3>
         <p>
           AI Fundamentals & Lifelong Professional Skills,
           through Magic Bus India Foundation and IBM SkillsBuild.
         </p>
+        <!-- Upload your PDF to the certificates folder -->
+        <a class="project-link"
+           href="certificates/ai-fundamentals.pdf"
+           target="_blank" rel="noopener noreferrer">
+          View Certificate ↗
+        </a>
       </article>
 
       <article class="card">
-        <div class="card-icon">💡</div>
+        <div class="card-icon"></div>
         <h3>Ideathon Participation</h3>
         <p>
-          Participated in an ideathon focused on creative
-          thinking and innovative ideas.
+          Participation in an ideathon focused on creative thinking
+          and innovative ideas.
         </p>
+        <a class="project-link"
+           href="certificates/ideathon.pdf"
+           target="_blank" rel="noopener noreferrer">
+          View Certificate ↗
+        </a>
       </article>
 
       <article class="card">
-        <div class="card-icon">📐</div>
+        <div class="card-icon"></div>
         <h3>Math Olympiad</h3>
-        <p>
-          Mathematics Olympiad participation, 2025.
-        </p>
+        <p>Mathematics Olympiad participation, 2025.</p>
+        <a class="project-link"
+           href="certificates/math-olympiad.pdf"
+           target="_blank" rel="noopener noreferrer">
+          View Certificate ↗
+        </a>
       </article>
 
       <article class="card">
-        <div class="card-icon">🤖</div>
+        <div class="card-icon"></div>
         <h3>MedhaDrishti-2K26</h3>
         <p>
-          Add your AI medical image enhancement hackathon
-          project details and certificate link here.
+          AI medical image enhancement hackathon.
+          Add your participation or award details.
         </p>
+        <a class="project-link"
+           href="certificates/medhadrishti.pdf"
+           target="_blank" rel="noopener noreferrer">
+          View Certificate ↗
+        </a>
       </article>
 
       <article class="card">
-        <div class="card-icon">🚀</div>
+        <div class="card-icon"></div>
         <h3>Future Interns</h3>
         <p>
           Full Stack Web Development Internship.
-          Add completed tasks and project links as you progress.
+          Add your offer letter or completed project link.
         </p>
+        <!-- Replace with your actual GitHub project URL -->
+        <a class="project-link"
+           href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          View Project ↗
+        </a>
       </article>
 
-      <article class="card">
-        <div class="card-icon">✨</div>
-        <h3>Continuous Learning</h3>
-        <p>
-          Improving my programming, communication and
-          professional skills through practice.
-        </p>
-      </article>
     </div>
   </div>
 </section>
 
-<section id="education">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">My academic journey</span>
-      <h2>Education</h2>
-      <p>The foundation of my future goals.</p>
-    </div>
-
-    <div class="timeline">
-      <article class="timeline-item">
-        <span class="date">2024 – 2028</span>
-        <h3>Bachelor of Engineering</h3>
-        <p><strong>Information Science and Engineering</strong></p>
-        <p>Jawaharlal Nehru New College of Engineering (JNNCE)</p>
-        <p>Shivamogga, Karnataka</p>
-        <p>Visvesvaraya Technological University (VTU)</p>
-      </article>
-
-      <article class="timeline-item">
-        <span class="date">Pre-University Education</span>
-        <h3>PUC / 12th Standard</h3>
-        <p><strong>Akshara Residential College</strong></p>
-        <p>Add your stream and passing year.</p>
-      </article>
-
-      <article class="timeline-item">
-        <span class="date">Secondary Education</span>
-        <h3>SSLC / 10th Standard</h3>
-        <p><strong>Akshara Residential School</strong></p>
-        <p>Add your passing year.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="section-heading">
@@ -668,7 +727,7 @@ footer {
     </div>
 
     <div class="contact-card">
-      <div class="card-icon">💌</div>
+      <div class="card-icon"></div>
       <h3>Let's create something meaningful!</h3>
       <p>
         I'd love to connect with fellow learners, developers
@@ -676,13 +735,30 @@ footer {
       </p>
 
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:your-email@example.com">Email Me ↗</a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        <a class="btn btn-outline" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <!-- Replace with your actual email -->
+        <a class="btn btn-primary"
+           href="mailto:your-email@example.com">
+          Email Me ↗
+        </a>
+
+        <!-- Replace with your actual LinkedIn profile URL -->
+        <a class="btn btn-outline"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
+
+        <!-- Replace with your actual GitHub profile URL -->
+        <a class="btn btn-outline"
+           href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
       </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -691,7 +767,8 @@ footer {
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
 
 </body>
