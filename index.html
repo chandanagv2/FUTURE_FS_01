@@ -177,23 +177,90 @@
       color: var(--dark-pink);
     }
 
-    .profile {
-      width: min(300px, 100%);
-      aspect-ratio: 1;
-      margin: auto;
-      border-radius: 48% 52% 55% 45%;
-      background: linear-gradient(135deg, #f2b8cd, #fff0dc);
-      display: grid;
-      place-items: center;
-      text-align: center;
+    /* HOME */
+    #home {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, #f9dce7, transparent 30%),
+        var(--cream);
     }
 
-    .profile strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 4.5rem;
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      line-height: 1.15;
+      margin: 14px 0;
+    }
+
+    .hero h1 span {
       color: var(--dark-pink);
     }
+
+    .hero h3 {
+      color: var(--dark-pink);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid var(--pink);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary {
+      background: var(--pink);
+      color: white;
+    }
+
+    .secondary {
+      color: var(--dark-pink);
+    }
+
+    .profile {
+  width: min(300px, 100%);
+  aspect-ratio: 1;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #f2b8cd;
+  background: linear-gradient(135deg, #f2b8cd, #fff0dc);
+  box-shadow: 0 8px 25px rgba(190, 120, 160, 0.2);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+    
 
     /* ABOUT */
     #about, #skills, #certificates {
@@ -510,10 +577,11 @@
         </div>
 
         <div class="profile">
-          <div>
-            <strong>CGV</strong>
-            <small>Your photo can go here 🌸</small>
-          </div>
+          <div class="profile">
+  <img src="photo.jpeg"
+       alt="Chandana G V"
+       class="profile-photo">
+</div>
         </div>
       </div>
     </section>
