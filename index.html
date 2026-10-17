@@ -3,262 +3,773 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chandana GV | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#fff7f2">
+  <meta name="description" content="Shananajeevi's personal portfolio showcasing skills, projects, education and achievements.">
+  <title>Chandana G V | Personal Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #d66b91;
+      --pink-dark: #ad456e;
+      --pink-light: #f9dce7;
+      --cream: #fff8f0;
+      --paper: #fffdf9;
+      --text: #44343b;
+      --muted: #816c74;
+      --border: #f0dce2;
+      --shadow: 0 12px 35px rgba(135, 73, 98, 0.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 248, 240, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--pink-dark);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+      font-size: 0.87rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 75px 0;
+      background:
+        radial-gradient(ellipse at 90% 20%, #f7d8e5 0, transparent 36%),
+        radial-gradient(ellipse at 10% 90%, #fbe9d7 0, transparent 36%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      color: var(--pink-dark);
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      margin: 17px 0;
+      letter-spacing: -2px;
+    }
+
+    .highlight {
+      color: var(--pink);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 25px;
+    }
+
+    .tagline {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--pink-dark) !important;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid var(--pink);
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--pink);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      color: var(--pink-dark);
+      background: transparent;
+    }
+
+    .hero-art {
+      min-height: 320px;
+      border-radius: 48% 48% 25px 25px;
+      background: linear-gradient(145deg, #f5cbdc, #fff0df);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid white;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      position: relative;
+    }
+
+    .hero-art .flower {
+      font-size: 5rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-art h2 {
+      color: var(--pink-dark);
+      font-size: 1.7rem;
+    }
+
+    .hero-art p {
+      margin: 7px 0 0;
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 65px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin: 9px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-grid, .projects-grid, .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--paper);
+      box-shadow: 0 6px 22px rgba(135, 73, 98, 0.04);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 13px;
+    }
+
+    .skill-tags span {
+      font-size: 0.8rem;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      border-radius: 20px;
+      padding: 5px 11px;
+      font-weight: 600;
+    }
+
+    #projects {
+      background: #fff2f4;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-card .project-link {
+      margin-top: 18px;
+      color: var(--pink-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .timeline {
+      max-width: 750px;
+      margin: auto;
+      border-left: 2px solid var(--pink-light);
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 25px;
+      margin-bottom: 22px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      background: var(--pink);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      left: -39px;
+      top: 30px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 7px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .date {
+      display: inline-block;
+      color: var(--pink-dark);
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+    }
+
+    #contact {
+      background: #f9e4e9;
+    }
+
+    .contact-card {
+      max-width: 750px;
+      margin: auto;
+      padding: 35px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin: 10px 0 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 240px;
+        border-radius: 25px;
+      }
+
+      .skills-grid, .projects-grid, .achievements-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.78rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        white-space: nowrap;
+      }
+
+      .skills-grid, .projects-grid, .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .about-card, .contact-card {
+        padding: 23px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
   <header>
-    <nav class="navbar">
-      <a href="#home" class="logo">Chandana<span>.</span></a>
-
-      <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation">
-        ☰
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
+    <nav class="container">
+      <a href="#home" class="logo">S.</a>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p class="welcome">WELCOME TO MY PORTFOLIO</p>
-        <h1>Hi, I'm <span>Chandana GV</span></h1>
-        <h2>Engineering Student | Aspiring Developer</h2>
-        <p>
-          I am passionate about technology, programming, and
-          creating meaningful digital experiences. I enjoy learning
-          new skills and turning ideas into projects.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn">Explore My Work</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <div class="profile-circle">
-          <span>CGV</span>
-        </div>
-        <p>Learn. Build. Grow.</p>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <p class="section-label">GET TO KNOW ME</p>
-      <h2 class="section-title">About <span>Me</span></h2>
-
-      <div class="about-card">
-        <p>
-          Hello! I am Chandana GV, an Information Science and
-          Engineering student at Jawaharlal Nehru New College of
-          Engineering, Shivamogga, Karnataka.
-        </p>
-        <p>
-          I am interested in programming, web development,
-          problem-solving, and exploring new technologies. I believe
-          in continuous learning and improving my technical skills
-          through practical projects and teamwork.
-        </p>
-        <p>
-          My goal is to become a skilled software professional and
-          build useful solutions that make a difference.
-        </p>
-      </div>
-    </section>
-
-    <section id="skills" class="section alternate">
-      <p class="section-label">WHAT I KNOW</p>
-      <h2 class="section-title">My <span>Skills</span></h2>
-
-      <div class="card-grid">
-        <article class="card">
-          <div class="card-icon">💻</div>
-          <h3>Technical Skills</h3>
-          <p>C Programming</p>
-          <p>Python Basics</p>
-          <p>DBMS Basics</p>
-          <p>HTML & CSS</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">🧠</div>
-          <h3>Core Skills</h3>
-          <p>Problem Solving</p>
-          <p>Logical Thinking</p>
-          <p>Learning New Technologies</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Soft Skills</h3>
-          <p>Communication</p>
-          <p>Teamwork</p>
-          <p>Time Management</p>
-          <p>Quick Learner</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <p class="section-label">MY ACADEMIC JOURNEY</p>
-      <h2 class="section-title">My <span>Education</span></h2>
-
-      <div class="timeline">
-        <article class="timeline-card">
-          <span class="year">2024 – 2028</span>
-          <h3>Bachelor of Engineering</h3>
-          <p>Information Science and Engineering</p>
-          <p>Jawaharlal Nehru New College of Engineering</p>
-          <p>Shivamogga, Karnataka</p>
-          <p class="status">Undergraduate</p>
-        </article>
-
-        <article class="timeline-card">
-          <span class="year">Pre-University</span>
-          <h3>PUC</h3>
-          <p>Percentage: 88.33%</p>
-        </article>
-
-        <article class="timeline-card">
-          <span class="year">SSLC</span>
-          <h3>Secondary School Education</h3>
-          <p>Percentage: 77.4%</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section alternate">
-      <p class="section-label">WHAT I HAVE BUILT</p>
-      <h2 class="section-title">My <span>Projects</span></h2>
-
-      <div class="card-grid">
-        <article class="card project-card">
-          <div class="card-icon">🖐️</div>
-          <h3>Biometric Attendance System</h3>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div>
+          <span class="eyebrow">Welcome to my portfolio</span>
+          <h1>Hi, I'm <span class="highlight">Shananajeevi</span></h1>
+          <p class="tagline">Information Science Engineering Student</p>
           <p>
-            A project concept designed to improve attendance
-            tracking using biometric identification.
+            Creative • Curious • Problem Solver
+            <br>
+            I am an aspiring engineer passionate about learning new
+            technologies, building useful projects and turning ideas
+            into meaningful digital experiences.
           </p>
-          <span class="tag">Project Concept</span>
-        </article>
-
-        <article class="card project-card">
-          <div class="card-icon">🧾</div>
-          <h3>Laptop Billing System</h3>
-          <p>
-            A C programming project that calculates customer bills
-            based on selected products and quantities.
-          </p>
-          <span class="tag">C Programming</span>
-        </article>
-
-        <article class="card project-card">
-          <div class="card-icon">📚</div>
-          <h3>Book Issue & Return System</h3>
-          <p>
-            A basic library management project for recording
-            book issue and return details.
-          </p>
-          <span class="tag">C Programming</span>
-        </article>
-
-        <article class="card project-card">
-          <div class="card-icon">🌳</div>
-          <h3>AVL Tree Simulator</h3>
-          <p>
-            A learning project that demonstrates AVL tree
-            operations and self-balancing concepts.
-          </p>
-          <span class="tag">Data Structures</span>
-        </article>
-      </div>
-      <p class="note">
-        Note: Keep only projects you have actually completed or
-        clearly label ideas that are still in progress.
-      </p>
-    </section>
-
-    <section id="certificates" class="section">
-      <p class="section-label">MY ACHIEVEMENTS</p>
-      <h2 class="section-title">Certificates & <span>Achievements</span></h2>
-
-      <div class="card-grid">
-        <article class="card">
-          <div class="card-icon">🏆</div>
-          <h3>AI Fundamentals</h3>
-          <p>
-            AI Fundamentals & Lifelong Professional Skills
-          </p>
-          <p>Magic Bus India Foundation × IBM SkillsBuild</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">💡</div>
-          <h3>Ideathon Participation</h3>
-          <p>Participation in an ideathon, 2026.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">📜</div>
-          <h3>Math Olympiad</h3>
-          <p>Participation certificate, 2025.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">🤖</div>
-          <h3>AI Hackathon</h3>
-          <p>
-            MedhaDrishti-2K26: AI for Medical Image Enhancement
-            and Segmentation.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section alternate">
-      <p class="section-label">LET'S CONNECT</p>
-      <h2 class="section-title">Contact <span>Me</span></h2>
-
-      <div class="contact-card">
-        <p>
-          I am open to learning opportunities, collaborations,
-          and connecting with people in technology.
-        </p>
-
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/" target="_blank"
-             rel="noopener noreferrer">LinkedIn</a>
-
-          <a href="https://github.com/" target="_blank"
-             rel="noopener noreferrer">GitHub</a>
-
-          <!-- Replace the link below with your actual email -->
-          <a href="mailto:your-email@example.com">Email Me</a>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
+            <a class="btn btn-outline" href="#contact">Let's Connect</a>
+          </div>
         </div>
 
-        <p class="note">
-          Replace the sample links with your actual LinkedIn,
-          GitHub, and email details before publishing.
-        </p>
+        <div class="hero-art">
+          <div class="flower">🌸</div>
+          <h2>Dream. Learn. Create.</h2>
+          <p>A little creativity, a lot of curiosity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">A little introduction</span>
+          <h2>About Me</h2>
+          <p>Getting to know the person behind the projects.</p>
+        </div>
+
+        <div class="about-card">
+          <p>
+            Hello! I'm Shananajeevi, an Information Science Engineering
+            student with an interest in programming, technology and
+            creative problem-solving.
+          </p>
+          <p>
+            I enjoy exploring new ideas, strengthening my technical
+            knowledge and creating projects that help me learn through
+            practical experience.
+          </p>
+          <p>
+            My goal is to grow as a developer, collaborate with others
+            and continuously improve my skills one project at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What I'm learning</span>
+          <h2>Technical Skills</h2>
+          <p>Building a strong foundation for my engineering journey.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Programming</h3>
+            <p>Learning the fundamentals of programming and logical thinking.</p>
+            <div class="skill-tags">
+              <span>C Programming</span>
+              <span>Python Basics</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🗄️</div>
+            <h3>Database & Concepts</h3>
+            <p>Exploring data management and core computing concepts.</p>
+            <div class="skill-tags">
+              <span>DBMS Basics</span>
+              <span>Problem Solving</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌷</div>
+            <h3>Professional Skills</h3>
+            <p>Developing the habits needed for effective teamwork.</p>
+            <div class="skill-tags">
+              <span>Communication</span>
+              <span>Teamwork</span>
+              <span>Time Management</span>
+              <span>Quick Learner</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Ideas into action</span>
+          <h2>Featured Projects</h2>
+          <p>A collection of projects I'm building and exploring.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project-card">
+            <div class="card-icon">🌐</div>
+            <h3>Personal Portfolio</h3>
+            <p>
+              A responsive personal website to showcase my education,
+              skills, projects and achievements.
+            </p>
+            <div class="skill-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/"
+               target="_blank" rel="noopener noreferrer">
+              Add your repository link ↗
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">🧾</div>
+            <h3>Laptop Billing System</h3>
+            <p>
+              A beginner-friendly C programming project for selecting
+              products, calculating prices and generating a bill.
+            </p>
+            <div class="skill-tags">
+              <span>C</span>
+              <span>Logic Building</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/"
+               target="_blank" rel="noopener noreferrer">
+              Add your repository link ↗
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">📚</div>
+            <h3>Book Issue & Return System</h3>
+            <p>
+              A simple library management project concept for recording
+              book issues and returns.
+            </p>
+            <div class="skill-tags">
+              <span>C</span>
+              <span>Data Management</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/"
+               target="_blank" rel="noopener noreferrer">
+              Add your repository link ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Learning & recognition</span>
+          <h2>Certificates & Achievements</h2>
+          <p>Milestones that motivate me to keep growing.</p>
+        </div>
+
+        <div class="achievements-grid">
+          <article class="card">
+            <div class="card-icon">🏅</div>
+            <h3>AI Fundamentals</h3>
+            <p>
+              AI Fundamentals & Lifelong Professional Skills —
+              Magic Bus India Foundation and IBM SkillsBuild.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💡</div>
+            <h3>Ideathon Participation</h3>
+            <p>
+              Participated in an ideathon and explored creative
+              problem-solving and innovation.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📐</div>
+            <h3>Math Olympiad</h3>
+            <p>
+              Participated in a Mathematics Olympiad in 2025,
+              strengthening analytical thinking.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI Hackathon</h3>
+            <p>
+              Add your MedhaDrishti-2K26 hackathon participation,
+              project details and certificate here.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Web Development Internship</h3>
+            <p>
+              Add your Future Interns experience, tasks and completed
+              project links as you progress.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✨</div>
+            <h3>Continuous Learning</h3>
+            <p>
+              Improving my programming, web development and
+              professional skills through hands-on practice.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">My academic journey</span>
+          <h2>Education</h2>
+          <p>The foundation behind my future goals.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="date">2024 – 2028</span>
+            <h3>Bachelor of Engineering</h3>
+            <p><strong>Information Science and Engineering</strong></p>
+            <p>Jawaharlal Nehru New College of Engineering (JNNCE)</p>
+            <p>Shivamogga, Karnataka</p>
+            <p>Affiliated with Visvesvaraya Technological University (VTU)</p>
+          </article>
+
+          <article class="timeline-item">
+            <span class="date">Pre-University Education</span>
+            <h3>PUC / 12th Standard</h3>
+            <p>Add your college name, stream and passing year.</p>
+          </article>
+
+          <article class="timeline-item">
+            <span class="date">Secondary Education</span>
+            <h3>SSLC / 10th Standard</h3>
+            <p>Add your school name and passing year.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Let's stay connected</span>
+          <h2>Contact Me</h2>
+          <p>Open to learning, collaboration and new opportunities.</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">💌</div>
+          <h3>Have an idea or opportunity?</h3>
+          <p>
+            I'd love to connect with fellow learners, developers
+            and people who enjoy building meaningful things.
+          </p>
+
+          <div class="contact-links">
+            <!-- Replace the email below with your real email -->
+            <a class="btn btn-primary"
+               href="mailto:your-email@example.com">
+              Email Me ↗
+            </a>
+
+            <!-- Replace with your actual LinkedIn profile URL -->
+            <a class="btn btn-outline"
+               href="https://www.linkedin.com/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <!-- Replace with your actual GitHub profile URL -->
+            <a class="btn btn-outline"
+               href="https://github.com/"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Chandana GV. All rights reserved.</p>
-    <p>Designed with care and a passion for learning.</p>
+    <p>Made with ♡ by Chandana G V</p>
+    <p>© <span id="year"></span> All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
