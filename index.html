@@ -645,17 +645,22 @@
   padding: 80px 0;
 }
 
+/* TWO CERTIFICATE BOXES IN ONE ROW */
 #certificates .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* COMPLETE CERTIFICATE BOX */
 #certificates .certificate-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
   min-width: 0;
   min-height: 280px;
   box-sizing: border-box;
@@ -670,11 +675,13 @@
               box-shadow 0.25s ease;
 }
 
+/* HOVER EFFECT */
 #certificates .certificate-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
 }
 
+/* CERTIFICATE ICON */
 #certificates .certificate-icon {
   display: inline-flex;
   align-items: center;
@@ -687,12 +694,14 @@
   border-radius: 16px;
 }
 
+/* CERTIFICATE TITLE */
 #certificates .certificate-card h3 {
   font-size: 21px;
   line-height: 1.4;
   margin: 16px 0 8px;
 }
 
+/* DESCRIPTION */
 #certificates .certificate-card p {
   font-size: 15px;
   line-height: 1.7;
@@ -700,6 +709,7 @@
   overflow-wrap: anywhere;
 }
 
+/* VIEW CERTIFICATE LINK */
 #certificates .certificate-card .text-link {
   display: inline-block;
   margin-top: auto;
