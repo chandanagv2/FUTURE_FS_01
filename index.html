@@ -638,28 +638,52 @@
   }
 }
 
-    /* CERTIFICATES */
-    #certificates {
-      background: #fff0f5;
-    }
+  /* CERTIFICATES */
+#certificates {
+  background: #fff0f5;
+}
 
-    .certificate-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+#certificates .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
 
-    .certificate-card .text-link {
-      margin-top: auto;
-    }
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  border-radius: 24px;
+  background: #fffaf3;
+  border: 1px solid #eadfd2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  min-height: 260px;
+  box-sizing: border-box;
+}
 
-    .certificate-icon {
-      font-size: 1.8rem;
-      background: var(--light-pink);
-      border-radius: 14px;
-      padding: 10px;
-    }
-    .certificate-image {
+.certificate-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1.35rem;
+}
+
+.certificate-card p {
+  line-height: 1.6;
+}
+
+.certificate-card .text-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.certificate-icon {
+  font-size: 1.8rem;
+  background: var(--light-pink);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.certificate-image {
   width: 100%;
   max-width: 280px;
   height: 190px;
@@ -669,6 +693,11 @@
   border-radius: 10px;
 }
 
+@media (max-width: 700px) {
+  #certificates .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
     /* CONTACT */
     #contact {
       background: white;
