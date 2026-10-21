@@ -638,62 +638,38 @@
   }
 }
 
-  /* CERTIFICATES */
-#certificates {
-  background: #fff0f5;
-}
-
+/* Certificates: match the project cards */
 #certificates .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
-.certificate-card {
+#certificates .certificate-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 28px;
-  border-radius: 24px;
+  min-width: 0;
+  min-height: 280px;
+  box-sizing: border-box;
   background: #fffaf3;
   border: 1px solid #eadfd2;
+  border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-  min-height: 260px;
-  box-sizing: border-box;
 }
 
-.certificate-card h3 {
-  margin: 16px 0 8px;
-  font-size: 1.35rem;
-}
-
-.certificate-card p {
-  line-height: 1.6;
-}
-
-.certificate-card .text-link {
+#certificates .certificate-card .text-link {
   margin-top: auto;
-  padding-top: 18px;
 }
 
-.certificate-icon {
-  font-size: 1.8rem;
-  background: var(--light-pink);
-  border-radius: 14px;
-  padding: 10px;
+@media (max-width: 900px) {
+  #certificates .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.certificate-image {
-  width: 100%;
-  max-width: 280px;
-  height: 190px;
-  object-fit: contain;
-  display: block;
-  margin: 15px auto;
-  border-radius: 10px;
-}
-
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   #certificates .projects-grid {
     grid-template-columns: 1fr;
   }
