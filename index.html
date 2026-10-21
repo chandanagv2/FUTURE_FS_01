@@ -364,7 +364,7 @@
       margin-bottom: 7px;
     }
 
-   /* PROJECTS */
+  /* PROJECTS */
 #projects .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -377,11 +377,12 @@
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 8px 25px rgba(120, 60, 80, 0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #projects .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(120, 60, 80, 0.14);
 }
 
 #projects .icon {
@@ -415,6 +416,13 @@
   font-size: 12px;
 }
 
+#projects .project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 #projects .text-link {
   display: inline-block;
   color: #9a4968;
@@ -427,11 +435,27 @@
   text-decoration: underline;
 }
 
+#projects .cancel-btn {
+  background: #f8e3e9;
+  color: #793d55;
+  border: 1px solid #f0d8df;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+#projects .cancel-btn:hover {
+  background: #f0d0dc;
+}
+
 @media (max-width: 700px) {
   #projects .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   #projects .project-card {
     padding: 20px;
   }
@@ -705,6 +729,7 @@
 
     <div class="projects-grid">
 
+      <!-- PROJECT 1 -->
       <div class="project-card">
         <div class="icon">📚</div>
         <h3>Exam Rescue Planner</h3>
@@ -715,9 +740,13 @@
           <span class="tag">JavaScript</span>
           <span class="tag">Local Storage</span>
         </div>
-        <a class="text-link" href="https://exam-rescue-planner-1--chandanagv654.replit.app/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
+        <div class="project-actions">
+          <a class="text-link" href="https://exam-rescue-planner-1--chandanagv654.replit.app/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
+          <button class="cancel-btn" type="button" onclick="window.location.href='#projects'">Cancel</button>
+        </div>
       </div>
 
+      <!-- PROJECT 2 -->
       <div class="project-card">
         <div class="icon">🌱</div>
         <h3>FoodShare – Food Waste Reduction</h3>
@@ -727,9 +756,13 @@
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-        <a class="text-link" href="https://food-share-network--chandanagv.replit.app" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
+        <div class="project-actions">
+          <a class="text-link" href="https://food-share-network--chandanagv.replit.app" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
+          <button class="cancel-btn" type="button" onclick="window.location.href='#projects'">Cancel</button>
+        </div>
       </div>
 
+      <!-- PROJECT 3 -->
       <div class="project-card">
         <div class="icon">🔎</div>
         <h3>Mystery Quest – Detective Game</h3>
@@ -739,9 +772,13 @@
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-        <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/mystery-quest-interactive-game-website-com" target="_blank" rel="noopener noreferrer">Play Mystery Quest ↗</a>
+        <div class="project-actions">
+          <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/mystery-quest-interactive-game-website-com" target="_blank" rel="noopener noreferrer">Play Mystery Quest ↗</a>
+          <button class="cancel-btn" type="button" onclick="window.location.href='#projects'">Cancel</button>
+        </div>
       </div>
 
+      <!-- PROJECT 4 -->
       <div class="project-card">
         <div class="icon">🎯</div>
         <h3>Bubble Shooter – Arcade Game</h3>
@@ -751,7 +788,10 @@
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-        <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/" target="_blank" rel="noopener noreferrer">Play Bubble Shooter ↗</a>
+        <div class="project-actions">
+          <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/" target="_blank" rel="noopener noreferrer">Play Bubble Shooter ↗</a>
+          <button class="cancel-btn" type="button" onclick="window.location.href='#projects'">Cancel</button>
+        </div>
       </div>
 
     </div>
