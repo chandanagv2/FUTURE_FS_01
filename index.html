@@ -364,61 +364,78 @@
       margin-bottom: 7px;
     }
 
-    /* PROJECTS */
-    #projects {
-      background: var(--cream);
-    }
+   /* PROJECTS */
+#projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
 
-    .project-grid, .certificate-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+#projects .project-card {
+  background: #fff8f0;
+  border: 1px solid #f0d8df;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(120, 60, 80, 0.08);
+  transition: transform 0.3s ease;
+}
 
-    .project-card, .certificate-card {
-      background: white;
-      border: 1px solid #f0d6df;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 10px 30px #a83f6810;
-      transition: transform 0.2s;
-    }
+#projects .project-card:hover {
+  transform: translateY(-5px);
+}
 
-    .project-card h3, .certificate-card h3 {
-      margin: 12px 0;
-    }
+#projects .icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
 
-    .project-card p, .certificate-card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+#projects .project-card h3 {
+  color: #793d55;
+  margin-bottom: 12px;
+}
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin: 17px 0;
-    }
+#projects .project-card p {
+  color: #66545b;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
 
-    .tag {
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: var(--light-pink);
-      color: var(--dark-pink);
-      font-size: 0.78rem;
-      font-weight: bold;
-    }
+#projects .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
 
-    .text-link {
-      display: inline-block;
-      color: var(--dark-pink);
-      font-weight: bold;
-      margin-top: 14px;
-    }
+#projects .tag {
+  background: #f8e3e9;
+  color: #793d55;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+}
 
-    .text-link:hover {
-      text-decoration: underline;
-    }
+#projects .text-link {
+  display: inline-block;
+  color: #9a4968;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#projects .text-link:hover {
+  color: #663048;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  #projects .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  #projects .project-card {
+    padding: 20px;
+  }
+}
 
     /* CERTIFICATES */
     #certificates {
@@ -676,7 +693,7 @@
       </div>
     </section>
 
-<!-- 5. PROJECTS -->
+<!-- PROJECTS SECTION -->
 <section id="projects">
   <div class="container">
 
@@ -688,400 +705,58 @@
 
     <div class="projects-grid">
 
-      <!-- Exam Rescue Planner -->
       <div class="project-card">
         <div class="icon">📚</div>
         <h3>Exam Rescue Planner</h3>
-        <p>
-          A student-friendly website that helps students organize
-          exam preparation, track syllabus completion, prioritize
-          important topics, and create a personalized study plan.
-        </p>
-
+        <p>A website to organize exam preparation, track syllabus completion, prioritize topics, and create a personalized study plan.</p>
         <div class="tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
           <span class="tag">Local Storage</span>
         </div>
-
-        <a class="text-link"
-           href="https://exam-rescue-planner-1--chandanagv654.replit.app/"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="openProject(event, this.href)">
-          View Live Website ↗
-        </a>
+        <a class="text-link" href="https://exam-rescue-planner-1--chandanagv654.replit.app/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
       </div>
 
-      <!-- FoodShare -->
       <div class="project-card">
         <div class="icon">🌱</div>
         <h3>FoodShare – Food Waste Reduction</h3>
-        <p>
-          A community-focused website designed to reduce food waste
-          by helping individuals, restaurants, and organizations
-          share surplus food with people in need.
-        </p>
-
+        <p>A community website designed to reduce food waste by helping people share surplus food with those in need.</p>
         <div class="tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-
-        <a class="text-link"
-           href="https://food-share-network--chandanagv.replit.app"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="openProject(event, this.href)">
-          View Live Website ↗
-        </a>
+        <a class="text-link" href="https://food-share-network--chandanagv.replit.app" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
       </div>
 
-      <!-- Mystery Quest -->
       <div class="project-card">
         <div class="icon">🔎</div>
         <h3>Mystery Quest – Detective Game</h3>
-        <p>
-          An interactive mystery-solving game where players
-          investigate clues, solve puzzles, uncover hidden secrets,
-          and challenge their detective skills.
-        </p>
-
+        <p>An interactive mystery game where players investigate clues, solve puzzles, and uncover hidden secrets.</p>
         <div class="tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-
-        <a class="text-link"
-           href="https://bubble-sort-challenge.my.canva.site/mystery-quest-interactive-game-website-com"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="openProject(event, this.href)">
-          Play Mystery Quest ↗
-        </a>
+        <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/mystery-quest-interactive-game-website-com" target="_blank" rel="noopener noreferrer">Play Mystery Quest ↗</a>
       </div>
 
-      <!-- Bubble Shooter -->
       <div class="project-card">
         <div class="icon">🎯</div>
         <h3>Bubble Shooter – Arcade Game</h3>
-        <p>
-          A fun and interactive bubble-shooting game where players
-          aim, shoot, and match colorful bubbles to clear the board,
-          earn points, and enjoy an engaging gaming experience.
-        </p>
-
+        <p>An interactive bubble-shooting game where players match colorful bubbles, clear the board, and earn points.</p>
         <div class="tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
-
-        <a class="text-link"
-           href="https://bubble-sort-challenge.my.canva.site/"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="openProject(event, this.href)">
-          Play Bubble Shooter ↗
-        </a>
+        <a class="text-link" href="https://bubble-sort-challenge.my.canva.site/" target="_blank" rel="noopener noreferrer">Play Bubble Shooter ↗</a>
       </div>
 
     </div>
   </div>
 </section>
-
-
-<!-- PROJECT WEBSITE VIEWER -->
-<div id="projectViewer" class="project-viewer"
-     aria-hidden="true">
-
-  <button class="viewer-close"
-          onclick="closeProject()"
-          aria-label="Close project viewer">
-    ×
-  </button>
-
-  <iframe id="projectFrame"
-          title="Project website"
-          src="about:blank">
-  </iframe>
-
-</div>
-
-
-<style>
-/* PROJECT GRID */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-}
-
-/* PROJECT CARDS */
-.project-card {
-  background: #fff8f0;
-  border: 1px solid #f0d8df;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 25px rgba(120, 60, 80, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(120, 60, 80, 0.14);
-}
-
-.project-card .icon {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.project-card h3 {
-  color: #793d55;
-  margin-bottom: 12px;
-}
-
-.project-card p {
-  color: #66545b;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-/* TECHNOLOGY TAGS */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tag {
-  background: #f8e3e9;
-  color: #793d55;
-  padding: 6px 11px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-/* PROJECT LINK */
-.text-link {
-  display: inline-block;
-  color: #9a4968;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 5px;
-}
-
-.text-link:hover {
-  color: #663048;
-  text-decoration: underline;
-}
-
-/* FULL-SCREEN VIEWER */
-.project-viewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 999999;
-  background: #17263d;
-  padding: 48px 12px 12px;
-  box-sizing: border-box;
-}
-
-.project-viewer.active {
-  display: block;
-}
-
-/* TOP-RIGHT CLOSE BUTTON */
-.viewer-close {
-  position: absolute;
-  top: 7px;
-  right: 18px;
-  width: 38px;
-  height: 34px;
-  background: #f8e5c8;
-  color: #26334a;
-  border: none;
-  border-radius: 2px;
-  font-size: 27px;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.viewer-close:hover {
-  background: #f4cbd9;
-}
-
-/* EMBEDDED WEBSITE */
-#projectFrame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 4px;
-  background: #fff;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 700px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-
-  .project-viewer {
-    padding: 45px 5px 5px;
-  }
-
-  .viewer-close {
-    right: 10px;
-  }
-}
-</style>
-
-
-<script>
-function openProject(event, url) {
-  event.preventDefault();
-
-  const viewer = document.getElementById("projectViewer");
-  const frame = document.getElementById("projectFrame");
-
-  frame.src = url;
-  viewer.classList.add("active");
-  viewer.setAttribute("aria-hidden", "false");
-
-  document.body.style.overflow = "hidden";
-}
-
-function closeProject() {
-  const viewer = document.getElementById("projectViewer");
-  const frame = document.getElementById("projectFrame");
-
-  viewer.classList.remove("active");
-  viewer.setAttribute("aria-hidden", "true");
-
-  frame.src = "about:blank";
-  document.body.style.overflow = "";
-}
-
-/* Close viewer using the Escape key */
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeProject();
-  }
-});
-</script>
-
-/* PROJECT CARD */
-.project-card {
-  background: #fff8f0;
-  border: 1px solid #f0d8df;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 25px rgba(120, 60, 80, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(120, 60, 80, 0.14);
-}
-
-.project-card .icon {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.project-card h3 {
-  color: #793d55;
-  margin-bottom: 12px;
-}
-
-.project-card p {
-  color: #66545b;
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-/* TECHNOLOGY TAGS */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tag {
-  background: #f8e3e9;
-  color: #793d55;
-  padding: 6px 11px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-/* PROJECT BUTTONS */
-.project-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.text-link {
-  display: inline-block;
-  color: #9a4968;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.text-link:hover {
-  color: #663048;
-  text-decoration: underline;
-}
-
-/* CANCEL BUTTON */
-.cancel-btn {
-  display: inline-block;
-  padding: 9px 17px;
-  background: #f8dce5;
-  color: #793d55;
-  border: 1px solid #e8b7c8;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.cancel-btn:hover {
-  background: #793d55;
-  color: #ffffff;
-  border-color: #793d55;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 700px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-}
-</style>
    <!-- 6. CERTIFICATES AND ACHIEVEMENTS -->
 <section id="certificates">
   <div class="container">
